@@ -209,8 +209,8 @@ ME_163B =  {
 	},
 	
 	
-	Guns = SNO_MK_108({
-            muzzle_pos_connector = "Gun_point_1",
+	Guns = 
+	SNO_MK_108({muzzle_pos_connector = "Gun_point_1",
 			muzzle_pos 		  = {-1, -0.5, -1},
             effect_arg_number = 350,
             mixes = {{1, 3}},
