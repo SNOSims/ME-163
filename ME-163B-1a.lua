@@ -187,8 +187,6 @@ ME_163B =  {
 	Pylons =     {    },
 	
 	Tasks = {
-        aircraft_task(GroundAttack),
-        aircraft_task(RunwayAttack),
         aircraft_task(PinpointStrike),
         aircraft_task(CAS),
         aircraft_task(AFAC),
