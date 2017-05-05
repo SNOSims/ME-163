@@ -171,7 +171,7 @@ ME_163B =  {
 	SingleChargeTotal	 	= 0,
 	CMDS_Incrementation 	= 0,
 	ChaffDefault 			= 0, 
-	ChaffChargeSize 		= 1,
+	ChaffChargeSize 		= 0,
 	FlareDefault 			= 0, 
 	FlareChargeSize 		= 0,
 	CMDS_Edit 				= true,
@@ -191,7 +191,7 @@ ME_163B =  {
 	--sensors
 	
 	detection_range_max		 = 60,
-	radar_can_see_ground 	 = true, -- this should be examined (what is this exactly?)
+	radar_can_see_ground 	 = false, -- this should be examined (what is this exactly?)
 	CanopyGeometry = {
 		azimuth   = {-160.0, 160.0}, -- pilot view horizontal (AI)
 		elevation = {-50.0, 90.0} -- pilot view vertical (AI)
