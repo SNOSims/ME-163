@@ -3,7 +3,7 @@ declare_plugin("ME-163B",
 installed 	 = true, -- if false that will be place holder , or advertising
 dirName	  	 = current_mod_path,
 displayName  = _("ME-163B"),
-version		 = "0.3.0.alpha",		 
+version		 = "0.1.0",		 
 state		 = "installed",
 info		 = _("The ME-163B- was a rocket propelled German jet fighter."),
 
