@@ -1,0 +1,109 @@
+ Gos: we have init_debug.lua with this contents:
+ -----------------------------------------------
+ -----------------------------------------------
+ dofile(LockOn_Options.common_script_path.."devices_defs.lua")
+indicator_type       = indicator_types.COLLIMATOR  -- COMMON, COLLIMATOR, HELMET
+init_pageID     = 1
+purposes        = {render_purpose.GENERAL} -- GENERAL,HUD_ONLY_VIEW,SCREENSPACE_INSIDE_COCKPIT,SCREENSPACE_OUTSIDE_COCKPIT,GROUND_UNIT_OPERATOR,GROUND_UNIT_OPERATOR_SCREENSPACE
+--subset ids
+BASE    = 1
+
+page_subsets  = {
+[BASE]            = LockOn_Options.script_path.."HUD/Indicator/debug_page.lua",
+}
+pages = 
+{
+    {
+     BASE,
+     },
+} 
+-----------------------------------------------
+-----------------------------------------------
+[7:14 PM] Gos: the top of debug_page.lua has:
+ -----------------------------------------------
+ -----------------------------------------------
+dofile(LockOn_Options.script_path.."HUD/Indicator/definitions.lua")
+
+local SHOW_MASKS = true
+local SHOW_DEBUG = true
+
+local halfboxsize=65
+clip_mesh_verts    = {}
+clip_mesh_verts[#clip_mesh_verts + 1] = { -halfboxsize, -halfboxsize }
+clip_mesh_verts[#clip_mesh_verts + 1] = { -halfboxsize, halfboxsize }
+clip_mesh_verts[#clip_mesh_verts + 1] = { halfboxsize, halfboxsize }
+clip_mesh_verts[#clip_mesh_verts + 1] = { halfboxsize, -halfboxsize }
+
+debug_screen                   = CreateElement "ceMeshPoly"
+debug_screen.name              = "debug_screen"
+debug_screen.vertices          = clip_mesh_verts
+debug_screen.indices          = default_box_indices
+debug_screen.init_pos         = {0, 0, -10}
+debug_screen.init_rot         = {0, 0, 0}
+debug_screen.material         = "DBG_CLEAR"
+debug_screen.h_clip_relation = h_clip_relations.REWRITE_LEVEL
+debug_screen.level             = HUD_NOCLIP_LEVEL
+debug_screen.isdraw         = true
+debug_screen.change_opacity = false
+debug_screen.element_params = {"D_ENABLE"}
+debug_screen.controllers = {{"opacity_using_parameter",0}}
+debug_screen.isvisible         = SHOW_DEBUG
+Add(debug_screen)
+[7:14 PM] Gos: and our generic element has:
+NEW MESSAGES
+[7:14 PM] Gos: 
+local generic_output = CreateElement "ceStringPoly"
+generic_output.name = create_guid_string()
+generic_output.material = FONT_
+generic_output.init_pos = {0,debug_y_offset-80}
+generic_output.alignment = "CenterCenter"
+generic_output.stringdefs = {0.75*0.01,0.75*0.75 * 0.01, 0, 0}
+generic_output.formats = {"%s","%s"}
+generic_output.element_params = {"D_GENERIC", "D_ENABLE"}
+generic_output.controllers = {{"text_using_parameter",0,0},{"opacity_using_parameter",1}}
+generic_output.additive_alpha = true
+generic_output.collimated = true
+generic_output.use_mipfilter = true
+generic_output.isvisible = SHOW_DEBUG
+generic_output.parent_element = "debug_screen"
+Add(generic_output) 
+-----------------------------------------------
+-----------------------------------------------
+[7:15 PM] Gos: so we do foo = get_param_handle("D_GENERIC")
+[7:15 PM] Gos: then foo:set("Stuff")
+[7:15 PM] Gos: and it prints "Stuff" on the debug surface
+[7:15 PM] Gos: there's a little more than that, but that's the jist of it
+[7:15 PM] Gos: i think the wanderlust demo had examples in it too
+-----------------------------------------------
+-----------------------------------------------
+[7:17 PM] Gos: our device handler (test_device.lua) that outputs to the generic output has this loop:
+[7:17 PM] Gos: 
+-----------------------------------------------
+-----------------------------------------------
+    local v = generic_items[generic_index][3]()
+    local sv=""
+    if type(v)=="number" then
+        sv=string.format("%.2f",v)
+    else
+        sv=tostring(v)
+    end
+    generic_output:set(generic_items[generic_index][1]..":"..sv..generic_items[generic_index][2])
+-----------------------------------------------
+-----------------------------------------------
+NEW MESSAGES
+[7:17 PM] Gos: where generic_items was created like this:
+[7:18 PM] Gos: 
+-----------------------------------------------
+-----------------------------------------------
+local generic_index=1
+local generic_items = {  -- name,unit,function
+    {"gun", "mil", function() return string.format("%.2f",gunsight_mil_param:get()) end},
+    {"gun", "deg", function() return string.format("%.2f",(gunsight_mil_param:get()/1000.0)*360.0/(2*math.pi)) end},
+    {"Pitch", "", function() return sensor_data.getPitch()*360.0/(2*math.pi) end},
+    {"GL", "deg", function() return get_param_handle("GLIDE_SLOPE"):get() end},   }
+-----------------------------------------------
+-----------------------------------------------
+[7:18 PM] Gos: so we can just enable/disable more items in the array
+[7:18 PM] Gos: and it'll output as needed based on a keybinding[7:18 PM] Gos: lets us have 8-10 or more items available to show, but only have 1 up at once
+[7:18 PM] Gos: we keep critical items like AoA, airspeed, etc. up all the time
+[7:18 PM] Gos: then use generic_items for other debug we're doing
