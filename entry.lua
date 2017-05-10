@@ -5,7 +5,7 @@ dirName	  	 = current_mod_path,
 displayName  = _("ME-163B"),
 version		 = "0.1.0",		 
 state		 = "installed",
-info		 = _("The ME-163B- was a rocket propelled German jet fighter."),
+info		 = _("The Messerschmitt Me 163 Komet, designed by Alexander Lippisch, was a German rocket-powered fighter aircraft. It is the only rocket-powered fighter aircraft ever to have been operational and the first piloted aircraft of any type to exceed 1000 km/h (621 mph) in level flight. Its design was revolutionary and its performance unprecedented."),
 
 Skins	= 
 	{
