@@ -7,7 +7,7 @@ mount_vfs_model_path    (current_mod_path.."/Shapes")
 ME_163B =  {
         
     Name                 =   'ME-163B',
-    DisplayName            = _('A-4E'),
+    DisplayName            = _('ME-163B'),
     ViewSettings        = ViewSettings,
 
     -- enables ME-163 for X counties
@@ -82,8 +82,8 @@ ME_163B =  {
 	-------------------------
     length             				= 5.98, 		-- full lenght in m        
     height             				= 2.75, 		-- height in m                    
-    wing_area         				= 19.6, 		-- wing area in m2         **
-    wing_span         				= 9.32, 		-- wing span in m        
+    wing_area         				= 18.5, 		-- wing area in m2     -- Got a source with 18.5, 19.6 was original    **
+    wing_span         				= 9.33, 		-- wing span in m        
     wing_tip_pos     				= {-2.5, -0.38,    4.2}, -- wingtip coords for visual effects        
     wing_type         				= 0,    		-- FIXED_WING = 0 /VARIABLE_GEOMETRY = 1 /FOLDED_WING = 2 /ARIABLE_GEOMETRY_FOLDED = 3
     flaps_maneuver     				= 0.5, 			-- Max flaps in take-off and maneuver (0.5 = 1st stage; 1.0 = 2nd stage) (for AI)
@@ -108,13 +108,13 @@ ME_163B =  {
     Ny_max_e         				= 8.0, 			-- Max G (for AI)
     --AOA_take_off     = 0.27, -- AoA in take off radians (for AI)   16 degrees 
     bank_angle_max     				= 60, -- Max bank angle (for AI)
-    range             				= 3200, -- Max range in km (for AI)
+    range             				= 150, -- Max range in km (for AI)
     
-    thrust_sum_max     				= 4218.4, -- thrust in kg (J52 P8A: 9300 lb)    **
+    thrust_sum_max     				= 17000, -- thrust in kg (J52 P8A: 9300 lb)    **
     has_afteburner  				= false,
 	has_differential_stabilizer		=	false,
-    thrust_sum_ab   				= 4218.4, -- thrust in kg (kN)    **
-    average_fuel_consumption 		= 1,   -- 0.89 lb/lbf*hr = 1.246 kg/s for 100% thrust
+    thrust_sum_ab   				= 17000, -- thrust in kg (kN)    **
+    average_fuel_consumption 		= 1,   -- 0.89 lb/lbf*hr = 1.246 kg/s for 100% thrust -- Needs updating once translated
     is_tanker       				= false,
     tanker_type     				= 2, -- Tanker type if the plane is tanker
     air_refuel_receptacle_pos = {6.966, -0.366, 0.486}, 
@@ -162,7 +162,7 @@ ME_163B =  {
         [1] = 
         {
             ejection_seat_name    =    17,
-            drop_canopy_name    =    "A-4E_canopy", --23,
+            drop_canopy_name    =    "A-4E_canopy", --Check the Canopy name with other files,
             pos =         {3.077,    -0.03,    0}, --changes the position of the cockpit view {3.077,    0.574,    0}
             canopy_pos = {3.077,    0.674,    0},
 			canopy_pos = {2.677,2.677,0},
@@ -205,7 +205,7 @@ ME_163B =  {
     }, -- end of chaff_flare_dispenser
     
 --sensors
-    detection_range_max        = 250,        
+    detection_range_max        = 250, -- Can we just remove all of this? -Eagle
     radar_can_see_ground    =    true,
     CanopyGeometry = {
         azimuth   = {-160.0, 160.0}, -- pilot view horizontal (AI)
@@ -229,7 +229,7 @@ ME_163B =  {
         modulation = MODULATION_AM
     },
     
-    panelRadio = {
+    panelRadio = { -- Research to be done on radio, I'm betting it is similar to the 109 or 190 radio
         [1] = {
             name = _("AN/ARC-27A"),		   
             range = {	
@@ -330,7 +330,7 @@ ME_163B =  {
     -- },
 	
 ---------------------------------------------------------------------------------------------------------------------------------------------
-    Pylons =     {
+    Pylons =     { -- Another section to completely cut? I'm not removing anything yet untill we know for sure
         pylon(1, 0, -0.609, -0.762, -2.845, -- 
             {
                use_full_connector_position = true, connector = "Pylon1", arg = 341, arg_value = 0,
