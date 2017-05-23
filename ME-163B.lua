@@ -10,12 +10,8 @@ ME_163B =  {
     DisplayName            = _('A-4E'),
     ViewSettings        = ViewSettings,
 
-    -- enable A-4 for all countries.  It is CHEAP and easy to maintain
-	Countries = {"Abkhazia","Australia","Austria","Belarus","Belgium","Bulgaria","Canada","China","Croatia",
-                 "Czech Republic","Denmark","Egypt","Finland","France","Georgia","Germany","Greece","Hungary",
-                 "India","Insurgents","Iran","Iraq","Israel","Italy","Japan","Kazakhstan","The Netherlands","North Korea",
-                 "Norway","Pakistan","Poland","Romania","Russia","Saudi Arabia","Serbia","Slovakia","South Korea",
-                 "South Ossetia","Spain","Sweden","Switzerland","Syria","Turkey","UK","Ukraine","USA","USAF Aggressors"},
+    -- enables ME-163 for X counties
+	Countries = {"Germany","UK","USA","USAF Aggressors"},
         
     HumanCockpit         = false,
     HumanCockpitPath    = current_mod_path..'/Cockpit/',
@@ -78,38 +74,38 @@ ME_163B =  {
     attribute              = {wsType_Air, wsType_Airplane, wsType_Fighter, WSTYPE_PLACEHOLDER, "Multirole fighters", "Refuelable" },
     Categories = {"{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}", "Interceptor",},
     -------------------------
-    M_empty                     	= 1905,		 -- kg
-    M_nominal                    	= 3950,		 -- kg
-    M_max                         	= 4310,		 -- kg (Maximum Take Off Weight) [Needs Checking]
-    M_fuel_max                     	= 1527,	 -- kg (Internal Fuel Only) [Needs Checking]
-    H_max                          	= 16459,		 -- m  (Maximum Operational Ceiling) [Needs Checking]
+    M_empty                     	= 1905,		 	-- kg
+    M_nominal                    	= 3950,		 	-- kg
+    M_max                         	= 4310,		 	-- kg (Maximum Take Off Weight) [Needs Checking]
+    M_fuel_max                     	= 1527,	 		-- kg (Internal Fuel Only) [Needs Checking]
+    H_max                          	= 16459,		-- m  (Maximum Operational Ceiling) [Needs Checking]
 	-------------------------
-    length             				= 5.98, -- full lenght in m        
-    height             				= 2.75, -- height in m                    
-    wing_area         				= 19.6, -- wing area in m2         **
-    wing_span         				= 9.32, -- wing span in m        
+    length             				= 5.98, 		-- full lenght in m        
+    height             				= 2.75, 		-- height in m                    
+    wing_area         				= 19.6, 		-- wing area in m2         **
+    wing_span         				= 9.32, 		-- wing span in m        
     wing_tip_pos     				= {-2.5, -0.38,    4.2}, -- wingtip coords for visual effects        
-    wing_type         				= 0,    -- FIXED_WING = 0 /VARIABLE_GEOMETRY = 1 /FOLDED_WING = 2 /ARIABLE_GEOMETRY_FOLDED = 3
-    flaps_maneuver     				= 0.5, -- Max flaps in take-off and maneuver (0.5 = 1st stage; 1.0 = 2nd stage) (for AI)
+    wing_type         				= 0,    		-- FIXED_WING = 0 /VARIABLE_GEOMETRY = 1 /FOLDED_WING = 2 /ARIABLE_GEOMETRY_FOLDED = 3
+    flaps_maneuver     				= 0.5, 			-- Max flaps in take-off and maneuver (0.5 = 1st stage; 1.0 = 2nd stage) (for AI)
     has_speedbrake    				= false,
     
-    RCS                     		= 1, -- Radar Cross Section m2
-    IR_emission_coeff         		= 0.5, -- Normal engine -- IR_emission_coeff = 1 is Su-27 without afterburner. It is reference.
-    IR_emission_coeff_ab    		= 0.5, -- With afterburner
+    RCS                     		= 1, 			-- Radar Cross Section m2
+    IR_emission_coeff         		= 0.5, 			-- Normal engine -- IR_emission_coeff = 1 is Su-27 without afterburner. It is reference.
+    IR_emission_coeff_ab    		= 0.5, 			-- With afterburner
     
-    stores_number    				= 0, -- Amount of pylons. [CHECKED]
+    stores_number    				= 0, 			-- Amount of pylons. [CHECKED]
     
-    CAS_min            				= 25.7, -- minimal indicated airspeed  m/s?  (50 knots per NATOPS)
-    V_opt            				= 200, -- Cruise speed (for AI)
-    V_take_off        				= 77, -- Take off speed in m/s (for AI - 150kts)    
-    V_land            				= 58, -- Land speed in m/s (for AI) (110 kn)
-    V_max_sea_level 				= 300.83, -- Max speed at sea level in m/s (for AI) 
-    V_max_h         				= 300.8, -- Max speed at max altitude in m/s (for AI)    
-    Vy_max             				= 93, -- Max climb speed in m/s (for AI - 180kts)
-    Mach_max         				= 0.88, -- Max speed in Mach (for AI)    
-    Ny_min             				= -3.0, -- Min G (for AI)
-    Ny_max             				= 8.0, -- Max G (for AI)
-    Ny_max_e         				= 8.0, -- Max G (for AI)
+    CAS_min            				= 25.7, 		-- minimal indicated airspeed  m/s?  (50 knots per NATOPS)
+    V_opt            				= 200, 			-- Cruise speed (for AI)
+    V_take_off        				= 77, 			-- Take off speed in m/s (for AI - 150kts)    
+    V_land            				= 58, 			-- Land speed in m/s (for AI) (110 kn)
+    V_max_sea_level 				= 300.83, 		-- Max speed at sea level in m/s (for AI) 
+    V_max_h         				= 300.8, 		-- Max speed at max altitude in m/s (for AI)    
+    Vy_max             				= 93, 			-- Max climb speed in m/s (for AI - 180kts)
+    Mach_max         				= 0.88, 		-- Max speed in Mach (for AI)    
+    Ny_min             				= -3.0, 		-- Min G (for AI)
+    Ny_max             				= 8.0, 			-- Max G (for AI)
+    Ny_max_e         				= 8.0, 			-- Max G (for AI)
     --AOA_take_off     = 0.27, -- AoA in take off radians (for AI)   16 degrees 
     bank_angle_max     				= 60, -- Max bank angle (for AI)
     range             				= 3200, -- Max range in km (for AI)
