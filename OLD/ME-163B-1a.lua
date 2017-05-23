@@ -77,6 +77,38 @@ ME_163B =  {
 		},
 
 	},
+	-------------------------
+    -- add model draw args for network transmitting to this draw_args table (32 limit)
+    net_animation ={38, -- canopy
+                    0, -- gear
+					400, --front gear door
+					402, --huffer
+                    3,
+                    5,
+                    9,
+                    10, 
+                    11, -- aileron
+                    15, -- stabilizer
+                    20,  -- flaps
+                    21, -- air brake
+                    7, -- rat
+                    13, -- prop slow
+                    14, -- prop fast
+                    120, -- spoiler
+                    123, -- spoiler
+                    130, -- Nose Light
+                    190, -- left nav light
+                    191, -- tail nav light
+                    192, -- right nav light
+                    198, -- top anti collision light
+                    199, -- bottom anti collision light
+                    208, -- landing light
+                    209, -- taxi light
+                    210, -- nacelle spotlight
+                    211, -- left nose light
+                    212, -- right nose light
+                    },
+	-------------------------
 	mapclasskey 		= "P0091000025",
 	attribute  			= {wsType_Air, wsType_Airplane, wsType_Fighter, WSTYPE_PLACEHOLDER ,"Battleplanes",},
 	Categories 			= {"{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}", "Interceptor",},	

@@ -1,3 +1,9 @@
+------------------------------------------------------------------------------------
+mount_vfs_model_path    (current_mod_path.."/Shapes")
+--mount_vfs_liveries_path (current_mod_path.."/Liveries")   -- mounted in entry.lua
+--mount_vfs_texture_path  (current_mod_path.."/Textures")   -- mounted in entry.lua
+------------------------------------------------------------------------------------
+
 ME_163B =  {
         
     Name                 =   'ME-163B',
@@ -24,14 +30,14 @@ ME_163B =  {
             file       = 'ME-163B';
             life       = 18; -- lifebar
             vis        = 3;  -- visibility gain.
-            desrt    = 'Alphajet-destr'; -- Name of destroyed object file name Alphajet-destr. This is a placeholder.
+            desrt    = 'ME-163B_destr'; -- Name of destroyed object file name Alphajet-destr. This is a placeholder.
             fire       = {300, 3}; -- Fire on the ground after destoyed: 300sec 2m
             username = 'ME-163B';
             index    =  WSTYPE_PLACEHOLDER;
         },
         {
-            name  = "Alphajet-destr";
-            file  = "Alphajet-destr";
+            name  = "ME-163B_destr";
+            file  = "ME-163B_destr";
             fire  = {240, 2};  -- 240  2
         },
 
@@ -72,49 +78,49 @@ ME_163B =  {
     attribute              = {wsType_Air, wsType_Airplane, wsType_Fighter, WSTYPE_PLACEHOLDER, "Multirole fighters", "Refuelable" },
     Categories = {"{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}", "Interceptor",},
     -------------------------
-    M_empty                     = 5242.17,		 -- kg
-    M_nominal                     = 8318,		 -- kg
-    M_max                         = 11136,		 -- kg (Maximum Take Off Weight) [Needs Checking]
-    M_fuel_max                     = 2498.4,	 -- kg (Internal Fuel Only) [Needs Checking]
-    H_max                          = 12880,		 -- m  (Maximum Operational Ceiling) [Needs Checking]
+    M_empty                     	= 1905,		 -- kg
+    M_nominal                    	= 3950,		 -- kg
+    M_max                         	= 4310,		 -- kg (Maximum Take Off Weight) [Needs Checking]
+    M_fuel_max                     	= 1527,	 -- kg (Internal Fuel Only) [Needs Checking]
+    H_max                          	= 16459,		 -- m  (Maximum Operational Ceiling) [Needs Checking]
 	-------------------------
-    length             = 12.22, -- full lenght in m        
-    height             = 4.57, -- height in m                    
-    wing_area         = 24.16, -- wing area in m2         **
-    wing_span         = 8.38 , -- wing span in m        
-    wing_tip_pos     = {-2.5, -0.38,    4.2}, -- wingtip coords for visual effects        
-    wing_type         = 0,    -- FIXED_WING = 0 /VARIABLE_GEOMETRY = 1 /FOLDED_WING = 2 /ARIABLE_GEOMETRY_FOLDED = 3
-    flaps_maneuver     = 0.5, -- Max flaps in take-off and maneuver (0.5 = 1st stage; 1.0 = 2nd stage) (for AI)
-    has_speedbrake    = true,
+    length             				= 5.98, -- full lenght in m        
+    height             				= 2.75, -- height in m                    
+    wing_area         				= 19.6, -- wing area in m2         **
+    wing_span         				= 9.32, -- wing span in m        
+    wing_tip_pos     				= {-2.5, -0.38,    4.2}, -- wingtip coords for visual effects        
+    wing_type         				= 0,    -- FIXED_WING = 0 /VARIABLE_GEOMETRY = 1 /FOLDED_WING = 2 /ARIABLE_GEOMETRY_FOLDED = 3
+    flaps_maneuver     				= 0.5, -- Max flaps in take-off and maneuver (0.5 = 1st stage; 1.0 = 2nd stage) (for AI)
+    has_speedbrake    				= false,
     
-    RCS                     = 1, -- Radar Cross Section m2
-    IR_emission_coeff         = 0.5, -- Normal engine -- IR_emission_coeff = 1 is Su-27 without afterburner. It is reference.
-    IR_emission_coeff_ab    = 0.5, -- With afterburner
+    RCS                     		= 1, -- Radar Cross Section m2
+    IR_emission_coeff         		= 0.5, -- Normal engine -- IR_emission_coeff = 1 is Su-27 without afterburner. It is reference.
+    IR_emission_coeff_ab    		= 0.5, -- With afterburner
     
-    stores_number    = 5, -- Amount of pylons.
+    stores_number    				= 0, -- Amount of pylons. [CHECKED]
     
-    CAS_min            = 25.7, -- minimal indicated airspeed  m/s?  (50 knots per NATOPS)
-    V_opt            = 200, -- Cruise speed (for AI)
-    V_take_off        = 77, -- Take off speed in m/s (for AI - 150kts)    
-    V_land            = 58, -- Land speed in m/s (for AI) (110 kn)
-    V_max_sea_level = 300.83, -- Max speed at sea level in m/s (for AI) 
-    V_max_h         = 300.8, -- Max speed at max altitude in m/s (for AI)    
-    Vy_max             = 93, -- Max climb speed in m/s (for AI - 180kts)
-    Mach_max         = 0.88, -- Max speed in Mach (for AI)    
-    Ny_min             = -3.0, -- Min G (for AI)
-    Ny_max             = 8.0, -- Max G (for AI)
-    Ny_max_e         = 8.0, -- Max G (for AI)
+    CAS_min            				= 25.7, -- minimal indicated airspeed  m/s?  (50 knots per NATOPS)
+    V_opt            				= 200, -- Cruise speed (for AI)
+    V_take_off        				= 77, -- Take off speed in m/s (for AI - 150kts)    
+    V_land            				= 58, -- Land speed in m/s (for AI) (110 kn)
+    V_max_sea_level 				= 300.83, -- Max speed at sea level in m/s (for AI) 
+    V_max_h         				= 300.8, -- Max speed at max altitude in m/s (for AI)    
+    Vy_max             				= 93, -- Max climb speed in m/s (for AI - 180kts)
+    Mach_max         				= 0.88, -- Max speed in Mach (for AI)    
+    Ny_min             				= -3.0, -- Min G (for AI)
+    Ny_max             				= 8.0, -- Max G (for AI)
+    Ny_max_e         				= 8.0, -- Max G (for AI)
     --AOA_take_off     = 0.27, -- AoA in take off radians (for AI)   16 degrees 
-    bank_angle_max     = 60, -- Max bank angle (for AI)
-    range             = 3200, -- Max range in km (for AI)
+    bank_angle_max     				= 60, -- Max bank angle (for AI)
+    range             				= 3200, -- Max range in km (for AI)
     
-    thrust_sum_max     = 4218.4, -- thrust in kg (J52 P8A: 9300 lb)    **
-    has_afteburner  = false,
-	has_differential_stabilizer	=	false,
-    thrust_sum_ab   = 4218.4, -- thrust in kg (kN)    **
-    average_fuel_consumption = 1,   -- 0.89 lb/lbf*hr = 1.246 kg/s for 100% thrust
-    is_tanker       = false,
-    tanker_type     = 2, -- Tanker type if the plane is tanker
+    thrust_sum_max     				= 4218.4, -- thrust in kg (J52 P8A: 9300 lb)    **
+    has_afteburner  				= false,
+	has_differential_stabilizer		=	false,
+    thrust_sum_ab   				= 4218.4, -- thrust in kg (kN)    **
+    average_fuel_consumption 		= 1,   -- 0.89 lb/lbf*hr = 1.246 kg/s for 100% thrust
+    is_tanker       				= false,
+    tanker_type     				= 2, -- Tanker type if the plane is tanker
     air_refuel_receptacle_pos = {6.966, -0.366, 0.486}, 
     
 	-----------------------------------------------------------------------
@@ -145,7 +151,7 @@ ME_163B =  {
     {
         [1] = 
         {
-            pos =     {-5.9,    0.163,    0}, -- nozzle coords
+            pos =     {-3.383,	.031, -.002}, -- nozzle coords
             elevation    =    0.0, -- AFB cone elevation
             diameter    =    0.6, -- AFB cone diameter
             exhaust_length_ab    =    4, -- lenght in m
