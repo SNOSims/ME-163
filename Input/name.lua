@@ -1,1 +1,1 @@
-return _('F-104T')
+return _('ME-163B')
