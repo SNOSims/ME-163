@@ -161,11 +161,10 @@ ME_163B =  {
     {
         [1] = 
         {
-            ejection_seat_name    =    17,
-            drop_canopy_name    =    "A-4E_canopy", --Check the Canopy name with other files,
-            pos =         {3.077,    -0.03,    0}, --changes the position of the cockpit view {3.077,    0.574,    0}
-            canopy_pos = {3.077,    0.674,    0},
-			canopy_pos = {2.677,2.677,0},
+            ejection_seat_name = "pilot+ejectionseat",
+            drop_canopy_name    =    "pilot+ejectionseat", --Check the Canopy name with other files,
+            pos =  {4,	1,	0}, --changes the position of the cockpit view {3.077,    0.574,    0}
+            canopy_pos = {4,	1,	0},
 			--ejection_play_arg = 149,
 			--can_be_playable 	= true,				
 			--ejection_through_canopy = true,
@@ -288,7 +287,7 @@ ME_163B =  {
             Name = "AircraftCarrier With Tramplin",
         }, -- end of [2]
     }, -- end of TakeOffRWCategories    
-    WorldID = A_4E,
+    WorldID = ME_163B,
         
     Failures = {
         { id = 'asc',         label = _('ASC'),         enable = false, hh = 0, mm = 0, mmint = 1, prob = 100 },
@@ -329,178 +328,6 @@ ME_163B =  {
         -- _("TP Target Practice"),
     -- },
 	
----------------------------------------------------------------------------------------------------------------------------------------------
-    Pylons =     { -- Another section to completely cut? I'm not removing anything yet untill we know for sure
-        pylon(1, 0, -0.609, -0.762, -2.845, -- 
-            {
-               use_full_connector_position = true, connector = "Pylon1", arg = 341, arg_value = 0,
-            },
-            {
-                --ROCKETS--
-                { CLSID =   "{FD90A1DC-9147-49FA-BF56-CB83EF0BD32B}" }, --LAU-61, M151 HE
-                { CLSID =   "{174C6E6D-0C3D-42ff-BCB3-0853CB371F5C}" }, --LAU 68, MK5 HE
-				{ CLSID =   "{LAU-10_A4E}" }, --LAU-10 Zuni
-                
-                --MISSILES--
-                { CLSID =   "{AGM45_SHRIKE}", connector = "Pylon1b", arg_value = 0.1 }, --AGM 45 SHRIKE   
-				{ CLSID =   "{AGM12_B}" }, --AGM-12B
-				                
-                --BOMBS--                
-                { CLSID =   "{90321C8E-7ED1-47D4-A160-E074D5ABD902}" }, --MK-81
-                { CLSID =   "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}" }, --MK-82
-                { CLSID =   "{Mk82SNAKEYE}" },                          --MK-82 Snakeye
-				{ CLSID	= 	"{MK-77}" },								--MK-77
-				
-				--SPECIAL--
-				
-            }
-        ),    
-        pylon(2, 0, -0.047, -0.97, -1.899,
-            {
-               use_full_connector_position = true, connector = "Pylon2", arg = 342, arg_value = 0,
-            },
-            {
-                --FUEL TANKS--
-                { CLSID	= 	"{DFT-300gal_LR}" }, --		{ CLSID	= 	"{DFT-300gal_LR}",attach_point_position = { -0.10, -0.008, 0.0}},	--another (proper?) posibility to fix 300 gal tank position/angle ?
-				{ CLSID	= 	"{DFT-150gal}" },
-            
-                --AIR AIR--
-                { CLSID	=   "{AIM-9B}" },	--AIM-9B
-                
-                --ROCKETS--
-				{ CLSID =   "{LAU-10_A4E}" }, --LAU-10 Zuni
-
-                --MISSILES--
-                { CLSID	=   "{AGM45_SHRIKE}", connector = "Pylon2b", arg_value = 0.1 }, --AGM 45 SHRIKE
-				{ CLSID =   "{AGM12_C}" }, --AGM-12C
-				{ CLSID =   "{AGM12_B}" }, --AGM-12B
-                
-                --BOMBS--
-                { CLSID =   "{C40A1E3A-DD05-40D9-85A4-217729E37FAE}" }, --AGM-62 WALLEYE
-                { CLSID =   "{90321C8E-7ED1-47D4-A160-E074D5ABD902}" }, --MK-81
-                { CLSID =   "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}" }, --MK-82
-                { CLSID =   "{Mk82SNAKEYE}" },                          --MK-82 Snakeye
-                { CLSID	=   "{7A44FF09-527C-4B7E-B42B-3F111CFE50FB}" }, --MK-83
-                { CLSID =   "{AB8B8299-F1CC-4359-89B5-2172E0CF4A5A}" }, --MK-84
-                { CLSID =   "{00F5DAC4-0466-4122-998F-B1A298E34113}" }, --M-117
-				{ CLSID	= 	"{MK-77}" },
-
-                -- BOMB RACKS --
-                { CLSID =   "{Mk-81_MER_5_L}" },
-                { CLSID =   "{Mk-81_MER_4_L}" },
-				{ CLSID	=	"{60CC734F-0AFA-4E2E-82B8-93B941AB11CF}" }, --MER MK-82
-                --{ CLSID =   "{Mk-82_TER_3_C}" },
-                { CLSID =   "{Mk-82 Snakeye_TER_3_C}" },
-
-            }
-        ),    
-        pylon(3, 0, 0.11, -0.90, 0, 
-            {
-               use_full_connector_position = true, connector = "Pylon3", arg = 343, arg_value = 0,
-            },
-            {
-                --FUEL TANKS--
-				{ CLSID = 	"{DFT-400gal}" },
-                { CLSID = 	"{DFT-300gal}" },
-				{ CLSID	= 	"{DFT-150gal}" },
-                { CLSID = 	"{D-704_BUDDY_POD}" },
-                
-                --ROCKETS--
-                { CLSID =   "{3*LAU-61}" },
-                { CLSID =   "{9BC82B3D-FE70-4910-B2B7-3E54EFE73262}" }, --3*LAU 68, MK5 HE
-				{ CLSID =   "{LAU-10_A4E}" }, --LAU-10 Zuni
-
-                --MISSILES--
-				{ CLSID =   "{AGM12_B}" }, --AGM-12B	
-                
-                --BOMBS--
-                { CLSID =   "{C40A1E3A-DD05-40D9-85A4-217729E37FAE}" }, --AGM-62 WALLEYE
-                { CLSID =   "{90321C8E-7ED1-47D4-A160-E074D5ABD902}" }, --MK-81
-                { CLSID =   "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}" }, --MK-82
-                { CLSID =   "{Mk82SNAKEYE}" },                          --MK-82 Snakeye
-                { CLSID =   "{7A44FF09-527C-4B7E-B42B-3F111CFE50FB}" }, --MK-83        
-                { CLSID =   "{AB8B8299-F1CC-4359-89B5-2172E0CF4A5A}" }, --MK-84
-                { CLSID =   "{00F5DAC4-0466-4122-998F-B1A298E34113}" }, --M-117
-				{ CLSID	= 	"{MK-77}" },
-
-                --BOMB RACKS--
-                { CLSID =   "{Mk-81_MER_6_C}" },
-                { CLSID =   "{Mk-81_MER_4_C}" },
-                { CLSID =   "{Mk-82_MER_6_C}" },
-                { CLSID =   "{Mk-82_MER_4_C}" },
-				{ CLSID	=	"{60CC734F-0AFA-4E2E-82B8-93B941AB11CF}" }, --MER MK-82
-                --{ CLSID =   "{Mk-82_TER_3_C}" },
-                { CLSID =   "{Mk-82 Snakeye_MER_6_C}" },
-                { CLSID =   "{Mk-82 Snakeye_MER_4_C}" },
-                { CLSID =   "{Mk-82 Snakeye_TER_3_C}" },
-                { CLSID =   "{Mk-83_TER_3_C}" },
-                { CLSID =   "{Mk-83_TER_2_C}" },
-
-			}
-        ),    
-        pylon(4, 0, -0.047, -0.97, 1.899, 
-            {
-               use_full_connector_position = true, connector = "Pylon4", arg = 344, arg_value = 0,
-            },
-            {
-                --FUEL TANKS--
-                { CLSID = 	"{DFT-300gal_LR}" },
-				{ CLSID	= 	"{DFT-150gal}" },
-            
-                --AIR AIR--
-                { CLSID =   "{AIM-9B}" },
-                
-                --ROCKETS--
-				{ CLSID =   "{LAU-10_A4E}" }, --LAU-10 Zuni
-
-                --MISSILES--
-                { CLSID	=   "{AGM45_SHRIKE}", connector = "Pylon4b", arg_value = 0.1 }, --AGM 45 SHRIKE
-				{ CLSID =   "{AGM12_C}" }, --AGM-12C
-				{ CLSID	=   "{AGM12_B}" }, --AGM-12B
-                
-                --BOMBS--
-                { CLSID	=   "{C40A1E3A-DD05-40D9-85A4-217729E37FAE}" }, --AGM-62 WALLEYE
-                { CLSID =   "{90321C8E-7ED1-47D4-A160-E074D5ABD902}" }, --MK-81
-                { CLSID =   "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}" }, --MK-82
-                { CLSID =   "{Mk82SNAKEYE}" },                          --MK-82 Snakeye
-                { CLSID =   "{7A44FF09-527C-4B7E-B42B-3F111CFE50FB}" }, --MK-83
-                { CLSID =   "{AB8B8299-F1CC-4359-89B5-2172E0CF4A5A}" }, --MK-84
-                { CLSID =	"{00F5DAC4-0466-4122-998F-B1A298E34113}" }, --M-117
-				{ CLSID	= 	"{MK-77}" },
-
-                -- BOMB RACKS --
-                { CLSID =   "{Mk-81_MER_5_R}" },
-                { CLSID =   "{Mk-81_MER_4_R}" },
-				{ CLSID	=	"{60CC734F-0AFA-4E2E-82B8-93B941AB11CF}" }, --MER MK-82
-                --{ CLSID =   "{Mk-82_TER_3_C}" },
-                { CLSID =   "{Mk-82 Snakeye_TER_3_C}" },
-
-            }
-        ),    
-        pylon(5, 0, -0.609, -0.762, 2.845, 
-            {
-               use_full_connector_position = true, connector = "Pylon5", arg = 345, arg_value = 0,
-            },
-            {
-                --ROCKETS--
-                { CLSID =   "{FD90A1DC-9147-49FA-BF56-CB83EF0BD32B}" }, --LAU-61, M151 HE
-                { CLSID =   "{174C6E6D-0C3D-42ff-BCB3-0853CB371F5C}" }, --LAU 68, MK5 HE
-				{ CLSID =   "{LAU-10_A4E}" }, --LAU-10 Zuni
-                
-                --MISSILES--
-                { CLSID =   "{AGM45_SHRIKE}", connector = "Pylon5b", arg_value = 0.1 }, --AGM 45 SHRIKE
-				{ CLSID =   "{AGM12_B}" }, --AGM-12B
-                
-                --BOMBS--                
-                { CLSID =   "{90321C8E-7ED1-47D4-A160-E074D5ABD902}" }, --MK-81
-                { CLSID =   "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}" }, --MK-82
-                { CLSID =   "{Mk82SNAKEYE}" },                          --MK-82 Snakeye
-				{ CLSID	= 	"{MK-77}" },
-
-                --SPECIAL--
-            }
-        ),            
-    },
 ---------------------------------------------------------------------------------------------------------------------------------------------    
     Tasks = {
         aircraft_task(CAS),
@@ -515,161 +342,130 @@ ME_163B =  {
     DefaultTask = aircraft_task(CAS),
 ---------------------------------------------------------------------------------------------------------------------------------------------
     SFM_Data = {
-        aerodynamics = -- Cx = Cx_0 + Cy^2*B2 +Cy^4*B4
-        {
-            Cy0            = 0.0,    -- zero AoA lift coefficient
-            Mzalfa        = 5,    -- coefficients for pitch agility
-            Mzalfadt    = 1.5,    -- coefficients for pitch agility
-            kjx         = 2.25,    -- Inertia parametre X - Dimension (clean) airframe drag coefficient at X (Top) Simply the wing area in square meters (as that is a major factor in drag calculations) - smaller = massive inertia
-            kjz         = 0.00125,    -- Inertia parametre Z - Dimension (clean) airframe drag coefficient at Z (Front) Simply the wing area in square meters (as that is a major factor in drag calculations)
-            Czbe         = -0.016,    -- coefficient, along Z axis (perpendicular), affects yaw, negative value means force orientation in FC coordinate system
-            cx_gear        = 0.12,    -- coefficient, drag, gear ??
-            cx_flap        = 0.095,    -- coefficient, drag, full flaps
-            cy_flap        = 0.24,    -- coefficient, normal force, lift, flaps
-            cx_brk         = 0.24,    -- coefficient, drag speedbrake (0.08 for speedbrake, extra 0.16 to emulate the spoilers (see spoilers.lua and airbrakes.lua))
-            table_data = {
+		aerodynamics = -- Cx = Cx_0 + Cy^2*B2 +Cy^4*B4
+		{
+			Cy0			=	0.1,      -- zero AoA lift coefficient
+			Mzalfa	    =	4.355,
+			Mzalfadt	=	0.8, 
+			kjx			=	1.5,    
+			kjz 		=   0.001,
+			Czbe		=	-0.014, -- coefficient, along Z axis (perpendicular), affects yaw, negative value means force orientation in FC coordinate system
+			cx_gear		=	0.0,--0.12,    -- coefficient, drag, gear
+			cx_flap		=	0.0,--0.095,   -- coefficient, drag, full flaps
+			cy_flap		=	0.0,--0.24,    -- coefficient, normal force, lift, flaps
+			cx_brk		=	0.0,--0.08,   -- coefficient, drag, breaks
+			table_data  = 
+			{
             --       M       Cx0       Cya      B        B4          Omxmax   Aldop      Cymax
 
-                    {0.0,    0.012,    0.10,    0.04,    0.03,        0.5,    	14,        1.0,    },
-                    {0.4,    0.0145,    0.10,    0.04,    0.03,       10.56,    14,        1.4,    },
-                    {0.5,    0.015,    0.09,    0.04,    0.03,        11.56,    14,        1.5,    },
-                    {0.6,    0.015,    0.08,    0.04,    0.03,        12.56,    14,        1.6,    },
-                    {0.7,    0.015,    0.07,    0.04,    0.03,        11.56,    14,        1.5,    },
-                    {0.8,    0.015,    0.06,    0.04,    0.03,        10.56,    14,      1.4,    }, -- Cx0
-                    {0.85,    0.015,    0.06,    0.04,    0.03,       9.56,    14,      1.4,    }, -- 0.030
-                    {0.9,    0.045,    0.05,    0.04,    0.03,        9.56,    14,        1.4,    }, -- 0.060
-            }
-            -- M - Mach number
-            -- Cx0 - Coefficient, drag, profile, of the airplane
-            -- Cya - Normal force coefficient of the wing and body of the aircraft in the normal direction to that of flight. Inversely proportional to the available G-loading at any Mach value. (lower the Cya value, higher G available) per 1 degree AOA
-            -- B2 - Polar 2nd power coeff
-            -- B4 - Polar 4th power coeff
-            -- Omxmax - roll rate, rad/s
-            -- Aldop - Alfadop Max AOA at current M - departure threshold
-            -- Cymax - Coefficient, lift, maximum possible (ignores other calculations if current Cy > Cymax)
-        }, -- end of aerodynamics
-        engine = 
-        {
-            Nmg    =    55.0,    -- RPM at idle
-            MinRUD    =    0,    -- Min state of the throttle
-            MaxRUD    =    1,    -- Max state of the throttle
-            MaksRUD    =    1,    -- Military power state of the throttle
-            ForsRUD    =    1,    -- Afterburner state of the throttle
-            typeng    =    0,    
-            --[[
-                E_TURBOJET = 0
-                E_TURBOJET_AB = 1
-                E_PISTON = 2
-                E_TURBOPROP = 3
-                E_TURBOFAN    = 4
-                E_TURBOSHAFT = 5
-            --]]
-            hMaxEng    =    15,    -- Max altitude for safe engine operation in km
-            dcx_eng    =    0.0114,    -- Engine drag coeficient
-            -- Affects drag of engine when shutdown
-            -- cemax/cefor affect sponginess of elevator/inertia at slow speed
-            -- affects available g load apparently
+                    {0.0,    0.013,    0.033,    0.074,    0.01,       0.5,     90,       1.2,    },
+                    {0.1,    0.013,    0.067,    0.074,    0.01,       0.81,    90,       1.2,    },
+                    {0.2,	 0.013,	   0.085,	 0.074,	   0.01,	   1.62,    45,	      1.2	  },
+					{0.4,    0.0135,   0.120,    0.074,    0.01,       2.43,    30,       1.4,    },
+                    {0.5,    0.0138,   0.120,    0.074,    0.11,       2.63,    30,       1.5,    },
+                    {0.6,    0.0141,   0.120,    0.080,    0.11,       2.82,    30,       1.6,    },
+                    {0.7,    0.0147,   0.131,    0.080,    0.11,       2.98,    30,       1.5,    },
+                    {0.78,   0.0147,   0.131,    0.080,    0.11,       2.98,    30,       1.5,    },
+                    {0.80,   0.0232,   0.131,    0.080,    0.36,       2.98,    30,       1.5,    },
+                    {0.82,   0.0232,   0.131 ,   0.082,    0.36,       1.48,    25,       1.4,    }, -- Cx0
+                    {0.85,   0.0232,   0.131,    0.082,    0.36,       0.60,    20,       1.4,    }, -- 0.030
+                    {0.9,    0.0402,   0.076,    0.088,    0.36 ,      0.10,    15,       1.4,    }, -- 0.060
+					{0.94,	 0.0402,   0.0737,	 0.125,    0.43,       0.006,	9.8,	  0.625   },
+					{1.0,	 0.0598,   0.0735,	 0.15,     0.56,       0.004,	8,	      0.511   },
+					{1.04,	 0.063,	   0.0744,	 0.23,     0.84,       0.002,	7.4,	  0.469   },
+					{1.2,	 0.0642,   0.0760,	 0.26,     0.999,      0.001,   6.7,      0.425   },
+            } -- end of table_data
+			-- M - Mach number
+			-- Cx0 - Coefficient, drag, profile, of the airplane
+			-- Cya - Normal force coefficient of the wing and body of the aircraft in the normal direction to that of flight. Inversely proportional to the available G-loading at any Mach value. (lower the Cya value, higher G available) per 1 degree AOA
+			-- B - Polar quad coeff
+			-- B4 - Polar 4th power coeff
+			-- Omxmax - roll rate, rad/s
+			-- Aldop - Alfadop Max AOA at current M - departure threshold
+			-- Cymax - Coefficient, lift, maximum possible (ignores other calculations if current Cy > Cymax)
+		}, -- end of aerodynamics
+		engine = 
+		{
+            Nmg     =    12.0,    -- RPM at idle - Lowest throttle setting was only at 2000N
+            MinRUD  =   .12,    -- Min state of the throttle
+            MaxRUD  =    1,    -- Max state of the throttle
+            MaksRUD =   .12001,    -- Military power state of the throttle
+            ForsRUD =   .12002,    -- Afterburner state of the throttle
+            typeng  =    1,    
+			--[[
+				E_TURBOJET = 0
+				E_TURBOJET_AB = 1
+				E_PISTON = 2
+				E_TURBOPROP = 3
+				E_TURBOFAN				= 4
+				E_TURBOSHAFT = 5
+			--]]
+			
+			hMaxEng	=	22, -- Max altitude for safe engine operation in km
+            dcx_eng    =    0.0,    -- Engine drag coeficient
             cemax    =    0.037,    -- not used for fuel calulation , only for AI routines to check flight time ( fuel calculation algorithm is built in )
             cefor    =    0.037,    -- not used for fuel calulation , only for AI routines to check flight time ( fuel calculation algorithm is built in )
-            dpdh_m    =    6000,    --  altitude coefficient for max thrust
-            dpdh_f    =    14000.0,    --  altitude coefficient for AB thrust
-            --table_data = 
-            --{
-            --   M            Pmax
-            --    {0.0,        36877.0}, -- 36,877 kN
-            --    {0.1,        32627.0}, --
-            --    {0.2,        28761.0}, -- 130 KTS = 3650 FT VS. 3800 FT MANUAL
-            --    {0.3,        24973.0}, -- 12800 = 2 mins 40 sec vs. 4 mins
-            --    {0.4,        21209.0}, --24800.0 22800.0 23800.0 21200.0 19500.0 14800.0 11700.0
-            --    {0.5,        17212.0}, --26000.0 23000.0 24000.0 21800.0 19000.0 14700.0 14000.0
-            --    {0.6,        12726.0}, --28200.0 23200.0 24200.0 22400.0 18000.0 14600.0 14500.0 30% (30 mins vs. 40 mins tables)
-            --    {0.7,        7441.0}, --30400.0 23400.0 24400.0 23000.0 17500.0 14500.0 14500.0
-            --    {0.8,        963.0}, --32600.0 23600.0 24600.0 23600.0 17000.0 14400.0 14500.0
-            --    {0.9,        0.0}, --34800.0 23800.0 24800.0 24200.0 16000.0 14300.0 14500.0
-            --    {1.0,        0.0},  --36000.0 24000.0 25000.0 22000.0 15000.0 14200.0 14500.0
-            --}, -- end of table_data
-            -- M - Mach number
-            -- Pmax - Engine thrust at military power - kilo Newton
-            -- Pfor - Engine thrust at AFB
+            dpdh_m    =    2250,    --  altitude coefficient for max thrust
+            dpdh_f    =    2250,    --  altitude coefficient for AB thrust
 			extended = -- added new abilities for engine performance setup. thrust data now can be specified as 2d table by Mach number and altitude. thrust specific fuel consumption tuning added as well 
 			{
-				-- TSFC_max =  -- thrust specific fuel consumption by altitude and Mach number for RPM  100%, 2d table
-				-- {
-				-- 	M 		 = {0,0.3,0.5,0.7,1.0},
-				-- 	H		 = {0,1000,3000,10000},
-				-- 	TSFC	 = {-- M 0  0.3 0.5  0.7  1.0 
-								-- {   1,   1,  1,   1,   1},--H = 0
-								-- {   1,   1,  1,   1,   1},--H = 1000
-								-- {   1,   1,  1,   1,   1},--H = 3000
-								-- {   1,   1,  1,   1,   1},--H = 10000
-				-- 	}
-				-- },
-				-- TSFC_afterburner =  -- afterburning thrust specific fuel consumption by altitude and Mach number RPM  100%, 2d table
-				-- {
-					-- M 		 = {0,0.3,0.5,0.7,1.0},
-					-- H		 = {0,1000,3000,10000},
-					-- TSFC	 = {-- M 0  0.3 0.5  0.7  1.0 
-								-- {   0,   0,  0,   0,   0},--H = 0
-								-- {   0,   0,  0,   0,   0},--H = 1000
-								-- {   0,   0,  0,   0,   0},--H = 3000
-								-- {   0,   0,  0,   0,   0},--H = 10000
-					-- }
-				-- },
-				-- TSFC_throttle_responce =  -- correction to TSFC for different engine RPM, 1d table
-				-- {
-					-- RPM 	 = {0, 10, 20, 50 ,100},
-					-- K     = {1,  1,  1,  1,   1},
-				-- },
 				thrust_max = -- thrust interpolation table by altitude and mach number, 2d table
 				 {
 					 M 		 = {0,.1,0.3,0.5,0.7,0.8,0.9,1.1},
 					 H		 = {0,250,4572,7620,10668,13716,16764,19812},
 					 thrust	 = {-- M   0         0.1       0.3       0.5       0.7      0.8     0.9       1.1 
-								 {   61370,  59460,  57023, 36653,  36996,  37112,  36813,  34073 },--H = 0 (sea level)
-								 {   41370,  39460,  37023, 36653,  36996,  37112,  36813,  34073 },--H = 250 (sea level)
-								 {   27254,  25799,  24203, 24599,  26227,  27254,  28353,  29785 },--H = 4572 (15kft)
-								 {   20818,  19203,  17548, 17473,  18638,  19608,  20684,  22873 },--H = 7620 (25kft)
-								 {   10876,  11076,  11556, 12193,  13024,  13674,  14434,  16098 },--H = 10668 (35kft)
-								 {   6025,   6379,   6837,  7433,   8194,   8603,   9101,   10075 },--H = 13716 (45kft)
-								 {   3336,   3554,   3990,  4484,   5000,   5307,   5596,   6232  },--H = 16764 (55kft)
-								 {   1904,   2042,   2433,  2798,   3212,   3483,   3639,   4097  },--H = 19812 (65kft)
+								 {   16903,  16903,  169030, 16903,  16903,  16903,  16903,  16903 },--H = 0 (sea level)
+								 {   16903,  16903,  169030, 16903,  16903,  16903,  16903,  16903 },--H = 250 (sea level)
+								 {   18018,  18018,  18018, 18018,  18018,  18018,  18018,  18018 },--H = 4572 (15kft)
+								 {   18500,  18500,  18500, 18500,  18500,  18500,  18500,  18500 },--H = 7620 (25kft)
+								 {   18830,  18830,  18830, 18830,  18830,  18830,  18830,  18830 },--H = 10668 (35kft)
+								 {   19058,   19058,   19058,  19058,   19058,   19058,   19058,   19058 },--H = 13716 (45kft)
+								 {   19207,   19207,   19207,  19207,   19207,   19207,   19207,   19207  },--H = 16764 (55kft)
+								 {   19296,   19296,   19296,  19296,   19296,   19296,   19296,   19296  },--H = 19812 (65kft)
 								 
 					 },
 				 },
-				-- thrust_afterburner = -- afterburning thrust interpolation table by altitude and mach number, 2d table
-				-- {
-					-- M 		 = {0,0.3,0.5,0.7,1.0},
-					-- H		 = {0,1000,3000,10000},
-					-- thrust	 = {-- M 0  0.3 0.5  0.7  1.0 
-								-- {   1000,   1000,  1000,   1000,   1000},--H = 0
-								-- {   1000,   1000,  1000,   1000,   1000},--H = 1000
-								-- {   1000,   1000,  1000,   1000,   1000},--H = 3000
-								-- {   1000,   1000,  1000,   1000,   1000},--H = 10000
-					-- }
-				-- }
-				--rpm_acceleration_time_factor = -- time factor for engine governor  ie RPM += (desired_RPM - RPM ) * t(RPM) * dt
-				--{
-				--	RPM  = {0, 50, 100},
-				--	t    = {0.3,0.3,0.3} 
-				--},
-				--rpm_deceleration_time_factor = -- time factor for engine governor 
-				--{
-				--	RPM  = {0, 50, 100},
-				--	t    = {0.3,0.3,0.3} 
-				--},
-				--rpm_throttle_responce = -- required RPM according to throttle position 
-				--{
-				--	throttle = {0  ,0.8 , 1.0},
-				--	RPM      = {50 ,100  ,100},
-				--},
-				--thrust_rpm_responce = -- thrust = K(RPM) * thrust_max(M,H)
-				--{
-				--	RPM = {0  ,50  , 100},
-				--	K   = {0  ,0.05, 1},
-				--},
+				 
+				 
+				 thrust_afterburner = -- afterburning thrust interpolation table by altitude and mach number, 2d table
+				 {
+					 M 		 = {0,.1,0.3,0.5,0.7,0.8,0.9,1.1},
+					 H		 = {0,250,4572,7620,10668,13716,16764,19812},
+					 thrust	 = {-- M   0         0.1       0.3       0.5       0.7      0.8     0.9       1.1 
+								 {   16903,  16903,  16903, 16903,  16903,  16903,  16903,  16903 },--H = 0 (sea level)
+								 {   16903,  16903,  16903, 16903,  16903,  16903,  16903,  16903 },--H = 250 (sea level)
+								 {   18018,  18018,  18018, 18018,  18018,  18018,  18018,  18018 },--H = 4572 (15kft)
+								 {   18500,  18500,  18500, 18500,  18500,  18500,  18500,  18500 },--H = 7620 (25kft)
+								 {   18830,  18830,  18830, 18830,  18830,  18830,  18830,  18830 },--H = 10668 (35kft)
+								 {   19058,   19058,   19058,  19058,   19058,   19058,   19058,   19058 },--H = 13716 (45kft)
+								 {   19207,   19207,   19207,  19207,   19207,   19207,   19207,   19207  },--H = 16764 (55kft)
+								 {   19296,   19296,   19296,  19296,   19296,   19296,   19296,   19296  },--H = 19812 (65kft)
+								 
+					 },
+				 },
+				rpm_acceleration_time_factor = -- time factor for engine governor  ie RPM += (desired_RPM - RPM ) * t(RPM) * dt
+				{
+					RPM  = {0, 50, 100},
+					t    = {1,1,1} 
+				},
+				rpm_deceleration_time_factor = -- time factor for engine governor 
+				{
+					RPM  = {0, 50, 100},
+					t    = {1, 1, 1} 
+				},
+				rpm_throttle_responce = -- required RPM according to throttle position 
+				{
+					throttle = {0  ,0.8 , 1.0},
+					RPM      = {50 ,80  ,100},
+				},
+				thrust_rpm_responce = -- thrust = K(RPM) * thrust_max(M,H)
+				{
+					RPM = {0  ,50  , 100},
+					K   = {0  ,0.5, 1},
+				},
 			},
         }, -- end of engine
-    },
+	},
 ---------------------------------------------------------------------------------------------------------------------------------------------	        
     --damage , index meaning see in  Scripts\Aircrafts\_Common\Damage.lua
     Damage = {
@@ -702,14 +498,13 @@ ME_163B =  {
                 [85]    = {critical_damage = 3, args = {135}}, 						-- right wheel
     },
     
-    DamageParts = 
-    {  
-        [1] = "Rafale_M-oblomok-wing-r", 	-- Right Wing
-        [2] = "A-4E_damage_wing_L", 		-- Left Wing
-        [3] = "Rafale_M-oblomok-noise", 	-- nose
-        [4] = "Rafale_M-oblomok-tail-r", 	-- tail
-        [5] = "Rafale_M-oblomok-tail-l", 	-- tail
-    },
+	DamageParts = 
+	{  
+--DAMAGEOFF		[1] = "ME-163B-1a-part-wing-R", -- wing R
+--DAMAGEOFF		[2] = "ME-163B-1a-part-wing-L", -- wing L
+--DAMAGEOFF		[3] = "ME-163B-1a-part-nose", -- nose
+--DAMAGEOFF		[4] = "ME-163B-1a-part-tail", -- tail
+	},
 ---------------------------------------------------------------------------------------------------------------------------------------------	    
     lights_data = {
     typename = "collection",
