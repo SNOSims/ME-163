@@ -1,4 +1,4 @@
-declare_plugin("ME-163B",
+declare_plugin("ME-163B by SNO Simulations",
 {
 installed 	 = true, -- if false that will be place holder , or advertising
 dirName	  	 = current_mod_path,
@@ -6,8 +6,12 @@ displayName  = _("ME-163B"),
 version		 = "0.1.0",		 
 state		 = "installed",
 info		 = _("The Messerschmitt Me 163 Komet, designed by Alexander Lippisch, was a German rocket-powered fighter aircraft. It is the only rocket-powered fighter aircraft ever to have been operational and the first piloted aircraft of any type to exceed 1000 km/h (621 mph) in level flight. Its design was revolutionary and its performance unprecedented."),
-binaries	= { 'ED_FM_Template'},  -- The DLL of the external flight model 
-
+encyclopedia_path = current_mod_path..'/Encyclopedia',
+binaries   =
+{
+--'ED_FM_Template',
+nil,
+},
 Skins	= 
 	{
 		{
@@ -45,6 +49,6 @@ mount_vfs_sound_path    (current_mod_path.."/Sounds")
 make_flyable('ME-163B'	, current_mod_path..'/Cockpit/Scripts/',nil, current_mod_path..'/comm.lua')
 
 dofile(current_mod_path..'/Weapons/SNO_Weapons.lua')
-dofile(current_mod_path..'/ME-163B-1a.lua')
+dofile(current_mod_path..'/ME-163B.lua')
 
 plugin_done()-- finish declaration , clear temporal data
