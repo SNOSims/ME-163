@@ -40,11 +40,11 @@ InputProfiles =
 	},
 })
 ---------------------------------------------------------------------------------------
-mount_vfs_liveries_path (current_mod_path.."/Liveries")
+--mount_vfs_liveries_path (current_mod_path.."/Liveries")
 mount_vfs_texture_path  (current_mod_path.."/Textures")
 mount_vfs_texture_path  (current_mod_path.."/Cockpit/Textures")
-mount_vfs_model_path	(current_mod_path.."/Cockpit/Shapes")
-mount_vfs_sound_path    (current_mod_path.."/Sounds")
+--mount_vfs_model_path	(current_mod_path.."/Cockpit/Shapes")
+--mount_vfs_sound_path    (current_mod_path.."/Sounds")
 
 make_flyable('ME-163B'	, current_mod_path..'/Cockpit/Scripts/',nil, current_mod_path..'/comm.lua')
 
