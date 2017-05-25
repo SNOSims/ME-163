@@ -48,7 +48,7 @@ mount_vfs_sound_path    (current_mod_path.."/Sounds")
 
 make_flyable('ME-163B'	, current_mod_path..'/Cockpit/Scripts/',nil, current_mod_path..'/comm.lua')
 
-dofile(current_mod_path..'/Weapons/SNO_Weapons.lua')
+dofile(current_mod_path..'/Weapons/SNO_Weapons.lua') --Called first as weapons must be defined so that ME-163B can read
 dofile(current_mod_path..'/ME-163B.lua')
 
 plugin_done()-- finish declaration , clear temporal data
