@@ -839,4 +839,4 @@ ME_163B =  {
     },
 }
 
-add_aircraft(A_4E)
+add_aircraft(ME_163B)
