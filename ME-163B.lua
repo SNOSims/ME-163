@@ -204,21 +204,6 @@ ME_163B =  {
     }, -- end of chaff_flare_dispenser
     
 --sensors
-    detection_range_max        = 250, -- Can we just remove all of this? -Eagle
-    radar_can_see_ground    =    true,
-    CanopyGeometry = {
-        azimuth   = {-160.0, 160.0}, -- pilot view horizontal (AI)
-        elevation = {-50.0, 90.0} -- pilot view vertical (AI)
-    },
-    Sensors = {
-        RADAR = "AN/APG-53A",
-        IRST = "OLS-27",
-        OPTIC = "Shkval",--necessite un profil 25T.
-        RWR = "Abstract RWR"
-    },
-    Countermeasures = {
-        ECM = "AN/ALQ-165"
-    },
 
     HumanRadio = {
         frequency = 254.0, -- Maykop (Caucasus) or Nellis (NTTR)
@@ -338,22 +323,22 @@ Pylons =     {    },
         aircraft_task(CAS),
         aircraft_task(SEAD),
         aircraft_task(Reconnaissance),
-        aircraft_task(GroundAttack),
+--      aircraft_task(GroundAttack),
 --      aircraft_task(AFAC),
-        aircraft_task(RunwayAttack),
-        aircraft_task(AntishipStrike),
-		aircraft_task(Refueling)
+--      aircraft_task(RunwayAttack),
+--      aircraft_task(AntishipStrike),
+--      aircraft_task(Refueling)
     },    
     DefaultTask = aircraft_task(CAS),
 ---------------------------------------------------------------------------------------------------------------------------------------------
     SFM_Data = {
 		aerodynamics = -- Cx = Cx_0 + Cy^2*B2 +Cy^4*B4
 		{
-			Cy0			=	0.1,      -- zero AoA lift coefficient
-			Mzalfa	    =	4.355,
+			Cy0	        =	-0.1,      -- zero AoA lift coefficient
+			Mzalfa	        =	4.355,
 			Mzalfadt	=	0.8, 
-			kjx			=	1.5,    
-			kjz 		=   0.001,
+			kjx		=	1.5,    
+			kjz 		=       0.001,
 			Czbe		=	-0.014, -- coefficient, along Z axis (perpendicular), affects yaw, negative value means force orientation in FC coordinate system
 			cx_gear		=	0.0,--0.12,    -- coefficient, drag, gear
 			cx_flap		=	0.0,--0.095,   -- coefficient, drag, full flaps
@@ -365,8 +350,8 @@ Pylons =     {    },
 
                     {0.0,    0.013,    0.033,    0.074,    0.01,       0.5,     90,       1.2,    },
                     {0.1,    0.013,    0.067,    0.074,    0.01,       0.81,    90,       1.2,    },
-                    {0.2,	 0.013,	   0.085,	 0.074,	   0.01,	   1.62,    45,	      1.2	  },
-					{0.4,    0.0135,   0.120,    0.074,    0.01,       2.43,    30,       1.4,    },
+                    {0.2     0.013,    0.085,	 0.074,	   0.01,       1.62,    45,       1.2	  },
+		    {0.4,    0.0135,   0.120,    0.074,    0.01,       2.43,    30,       1.4,    },
                     {0.5,    0.0138,   0.120,    0.074,    0.11,       2.63,    30,       1.5,    },
                     {0.6,    0.0141,   0.120,    0.080,    0.11,       2.82,    30,       1.6,    },
                     {0.7,    0.0147,   0.131,    0.080,    0.11,       2.98,    30,       1.5,    },
@@ -375,10 +360,10 @@ Pylons =     {    },
                     {0.82,   0.0232,   0.131 ,   0.082,    0.36,       1.48,    25,       1.4,    }, -- Cx0
                     {0.85,   0.0232,   0.131,    0.082,    0.36,       0.60,    20,       1.4,    }, -- 0.030
                     {0.9,    0.0402,   0.076,    0.088,    0.36 ,      0.10,    15,       1.4,    }, -- 0.060
-					{0.94,	 0.0402,   0.0737,	 0.125,    0.43,       0.006,	9.8,	  0.625   },
-					{1.0,	 0.0598,   0.0735,	 0.15,     0.56,       0.004,	8,	      0.511   },
-					{1.04,	 0.063,	   0.0744,	 0.23,     0.84,       0.002,	7.4,	  0.469   },
-					{1.2,	 0.0642,   0.0760,	 0.26,     0.999,      0.001,   6.7,      0.425   },
+		    {0.94,   0.0402,   0.0737,	 0.125,    0.43,       0.006,	9.8,	  0.625   },
+		    {1.0,    0.0598,   0.0735,	 0.15,     0.56,       0.004,	8,        0.511   },
+		    {1.04,   0.063,    0.0744,	 0.23,     0.84,       0.002,	7.4,	  0.469   },
+		    {1.2,    0.0642,   0.0760,	 0.26,     0.999,      0.001,   6.7,      0.425   },
             } -- end of table_data
 			-- M - Mach number
 			-- Cx0 - Coefficient, drag, profile, of the airplane
@@ -419,21 +404,22 @@ Pylons =     {    },
 					 M 		 = {0,.1,0.3,0.5,0.7,0.8,0.9,1.1},
 					 H		 = {0,250,4572,7620,10668,13716,16764,19812},
 					 thrust	 = {-- M   0         0.1       0.3       0.5       0.7      0.8     0.9       1.1 
-								 {   16903,  16903,  169030, 16903,  16903,  16903,  16903,  16903 },--H = 0 (sea level)
-								 {   16903,  16903,  169030, 16903,  16903,  16903,  16903,  16903 },--H = 250 (sea level)
-								 {   18018,  18018,  18018, 18018,  18018,  18018,  18018,  18018 },--H = 4572 (15kft)
-								 {   18500,  18500,  18500, 18500,  18500,  18500,  18500,  18500 },--H = 7620 (25kft)
-								 {   18830,  18830,  18830, 18830,  18830,  18830,  18830,  18830 },--H = 10668 (35kft)
-								 {   19058,   19058,   19058,  19058,   19058,   19058,   19058,   19058 },--H = 13716 (45kft)
-								 {   19207,   19207,   19207,  19207,   19207,   19207,   19207,   19207  },--H = 16764 (55kft)
-								 {   19296,   19296,   19296,  19296,   19296,   19296,   19296,   19296  },--H = 19812 (65kft)
+					           {       16903,    16903,    16903,    16903,    16903,   16903,  16903,    16903 },--H = 0 (sea level)
+						   {       16903,    16903,    16903,    16903,    16903,   16903,  16903,    16903 },--H = 250 (sea level)
+					           {       18018,    18018,    18018,    18018,    18018,   18018,  18018,    18018 },--H = 4572 (15kft)
+					           {       18500,    18500,    18500,    18500,    18500,   18500,  18500,    18500 },--H = 7620 (25kft)
+						   {       18830,    18830,    18830,    18830,    18830,   18830,  18830,    18830 },--H = 10668 (35kft)
+						   {       19058,    19058,    19058,    19058,    19058,   19058,  19058,    19058 },--H = 13716 (45kft)
+					           {       19207,    19207,    19207,    19207,    19207,   19207,  19207,    19207  },--H = 16764 (55kft)
+						   {       19296,    19296,    19296,    19296,    19296,   19296,  19296,    19296  },--H = 19812 (65kft)
 								 
 					 },
 				 },
 				 
 				 
 				 thrust_afterburner = -- afterburning thrust interpolation table by altitude and mach number, 2d table
-				 {
+				 { -- Not needed because this is just a rocket with the whole thing being an "afterburner"
+					-- so just ignore everything in this section, might try deleting it and see what happens
 					 M 		 = {0,.1,0.3,0.5,0.7,0.8,0.9,1.1},
 					 H		 = {0,250,4572,7620,10668,13716,16764,19812},
 					 thrust	 = {-- M   0         0.1       0.3       0.5       0.7      0.8     0.9       1.1 
