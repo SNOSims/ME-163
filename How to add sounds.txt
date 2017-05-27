@@ -1,0 +1,192 @@
+--[[
+Sounds in DCS must belong to a sound host.  Each sound host is specific to a certain context, like cockpit vs external or 2D sounds vs 3D sounds.  You can create as many sound hosts as you wish 
+but I usually group them based on emission source type (mechanical, warning, systems, engine, etc.).
+
+-- CREATING A SOUND HOST --
+create_sound_host(<SOUND_HOST_NAME>, <CONTEXT>, x, y, z)
+	<SOUND_HOST_NAME> is a name chosen by the programmer
+	<CONTEXT> is a string of the sound context, known contexts for lua: "2D", "3D", "HEADPHONES" (I do not know how to add external sounds, these contexts only work for the cockpit)
+	x, y, z are the coordinates of the sound host emission point for the "3D" context
+
+-- SOUND HOST FUNCTIONS -- 
+create_sound(<SDEF_PATH>) -- create a sound source that belongs to the sound host
+	<SDEF_PATH> is the path to the sdef file for the sound, starting from the sdef folder in the mounted sounds directory
+	for example, in entry.lua, mount_vfs_sound_path    (current_mod_path.."/Sounds") -- the sdef folder should be in the Sounds folder, 
+	so creating a sound from the sdef file "<MOD_DIR>/Sounds/sdef/Aircrafts/A-4/Cockpit/FuelPump.sdef" is    create_sound("Aircrafts/A-4/Cockpit/FuelPump")
+update(gain, x, y, z) -- update the global gain and/or x,y,z coordinates for the sound host, effective for all owned sound sources.
+
+-- SOUND SOURCE FUNCTIONS --
+stop()
+play_once()
+play_continue() -- will loop the sound until stop() command
+is_playing() --note: this does NOT tell you if the sound file has finished playing or not.  It only tells you if a play_once() or play_continue() command has been given for the sound and has not yet been stopped with a stop() command
+update(pitch, gain, lowpass_freq) -- tell the sound to update its pitch, gain, or lowpass frequency values (use nil for any parameter you don't wish to change)
+
+
+--]]
+
+-- Full Example:
+
+local dev 	    = GetSelf()
+local dt = 0.006
+make_default_activity(dt)
+
+local iCommandPlaneFonar = 71
+
+dev:listen_command(iCommandPlaneFonar)
+
+-- Note: Not shown is logic for determining which direction the canopy is moving
+
+local canopyOpenSoundCommand = -1
+local canopyCloseSoundCommand = -1
+
+
+function createCockpitSound(sound_host, sdef_name)	
+	return sound_host:create_sound("Aircrafts/A-4/Cockpit/" .. sdef_name)
+end
+
+-- Function to create an object that stores the parameters and sound sources necessary to easily do looping sounds with start and ending sounds
+-- Using this looping sound source structure is possible even without starting or ending sound sources (just send nil in place of a sdef path)
+-- Note: Starting sound length is important, so that the looping sound knows when to start playing after the start sound should be ended.  
+--       This is necessary, since there are no functions or callbacks to get the real state of a sound source or when it has finished playing
+function createCockpitSoundLoop(sound_host, start_sound_length, sdef_name_start, sdef_name_loop, sdef_name_end)
+	start_length_ = start_sound_length or 0
+	
+	if sdef_name_start then
+		sound_start_ = createCockpitSound(sound_host, sdef_name_start)
+	else
+		sound_start_ = nil
+	end
+	
+	sound_loop_ = createCockpitSound(sound_host, sdef_name_loop)
+	
+	if sdef_name_end then
+		sound_end_ = createCockpitSound(sound_host, sdef_name_end)
+	else
+		sound_end_ = nil
+	end	
+	
+	return {
+		startLength = start_length_,
+		timePlaying = 0,
+		isPlaying = false,
+		sound_start = sound_start_,
+		sound_loop = sound_loop_,
+		sound_end = sound_end_,
+	}
+end
+
+function post_initialize()
+	
+	if create_sound_host ~= nil then 
+		cpt_mech_sh 				= create_sound_host("COCKPIT_MECH_SOUND_HOST","2D",0,0,0)
+		
+		sound_CanopyOpenLoop		= createCockpitSoundLoop(cpt_mech_sh, 0.7041, "CanopyOpenStart", "CanopyOpenLoop", "CanopyOpenEnd")
+		sound_CanopyCloseLoop		= createCockpitSoundLoop(cpt_mech_sh, 1.1459, "CanopyCloseStart", "CanopyCloseLoop", "CanopyCloseEnd")
+		sound_CanopyClose			= createCockpitSound(cpt_mech_sh, "CanopyClose")
+		sound_CanopyOpen			= createCockpitSound(cpt_mech_sh, "CanopyOpen")
+	end
+
+end
+
+function stopSound(sound)	
+	if sound and sound:is_playing() then
+		sound:stop()		
+	end	
+end
+
+function playSoundOnce(sound)
+	if sound then
+		if sound:is_playing() then 
+			sound:stop() 
+		end		
+		sound:play_once()
+	end	
+end
+
+function stopLoopSound(loopSound, playEndSound)
+	stopSound(loopSound.sound_start)
+	stopSound(loopSound.sound_loop)
+	loopSound.isPlaying = false
+	loopSound.timePlaying = 0
+	if playEndSound then
+		playSoundOnce(loopSound.sound_end)
+	end
+end
+
+-- Function to handle looping sounds (start, loop, and end sources) more easily
+-- command is a value that tells the function how to handle the looping source (-1 = no command, 0 = stop, 1 = start)
+function updateLoopingSound(command, loopSound)
+	if command > -1
+		if loopSound then
+			if command == 0 and loopSound.isPlaying then
+				--Stop command given
+				stopLoopSound(loopSound, true)
+			elseif command > 0 then
+				--Play command given
+				if loopSound.isPlaying then
+					-- first stop if playing
+					stopLoopSound(loopSound)
+				end
+				
+				if loopSound.sound_start then
+					loopSound.sound_start:play_once()
+				end
+				loopSound.isPlaying = true
+			end
+		end		
+	else
+		--no sound command given, manage start/looping sound
+		if loopSound.isPlaying then
+			loopSound.timePlaying = loopSound.timePlaying + dt
+			
+			if loopSound.sound_start and loopSound.sound_start:is_playing() then
+				if loopSound.timePlaying > (loopSound.startLength - dt) then					
+					loopSound.sound_loop:play_continue()
+				end
+				if loopSound.timePlaying > loopSound.startLength then
+					loopSound.sound_start:stop()
+					loopSound.sound_loop:play_continue()
+				end
+			else
+				loopSound.sound_loop:play_continue()
+			end
+		end
+	end
+end
+
+
+function update()
+	
+	updateLoopingSound(canopyOpenSoundCommand, sound_CanopyOpenLoop)
+	updateLoopingSound(canopyCloseSoundCommand, sound_CanopyCloseLoop)
+	
+	-- reset sound commands
+	canopyOpenSoundCommand = -1
+	canopyCloseSoundCommand = -1
+	
+
+	
+end
+
+
+function SetCommand(command,value)
+
+	
+	if command == iCommandPlaneFonar then
+		-- Note: Not shown is logic for determining which direction the canopy is moving or when to switch from playing/stopping... this depends on the mechanics of the system being modelled
+		
+		-- Example of a looping sound play
+		canopyOpenSoundCommand = 1 -- open canopy looping sound will start playing on next iteration
+		canopyCloseSoundCommand = 0 -- close canopy looping sound will stop playing on next iteration	
+		-- or
+		canopyCloseSoundCommand = 1 -- close canopy looping sound will start playing on next iteration
+		canopyOpenSoundCommand = 0 -- open canopy looping sound will stop playing on next iteration
+		
+		
+		-- Examples of a single sound play
+		playSoundOnce(sound_CanopyOpen)
+		-- or
+		playSoundOnce(sound_CanopyClose)
+	end
+end
