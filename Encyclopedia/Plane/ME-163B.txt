@@ -1,1 +1,5 @@
-test
+ME-163B
+Plane/ME-163B.png
+
+Name: ME-163B
+Type: Interceptor
