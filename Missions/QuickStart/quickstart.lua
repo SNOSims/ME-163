@@ -1,12 +1,41 @@
 planes = {
-    { 
+-- Caucasus    
+	{ 
     name = _('Free Flight'),
-    file = 'me_163_free_flight.miz',
+    file = 'Caucasus me_163_free_flight.miz',
 	},
 	{ 
     name = _('Take Off'),
-    file = 'me_163_take_off.miz',
+    file = 'Caucasus me_163_take_off.miz',
 	},
+	
+--	Nevada
+	{
+    name = _('Cold Start'),
+    file = 'Nevada me_163_cold_start.miz',
+    },
+	{
+    name = _('Take off'),
+    file = 'Nevada me_163_take_off.miz',
+    },
+	{
+    name = _('Free Flight'),
+    file = 'Nevada me_163_free_flight.miz',
+    },
+	
+--	Normandy
+	{
+    name = _('Cold Start'),
+    file = 'Normandy me_163_cold_start.miz',
+    },
+	{
+    name = _('Take off'),
+    file = 'Normandy me_163_take_off.miz',
+    },
+	{
+    name = _('Free Flight'),
+    file = 'Normandy me_163_free_flight.miz',
+    },
+	
 }
 
---Zilch, please add mission examples here.
