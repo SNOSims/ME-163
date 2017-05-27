@@ -10,7 +10,7 @@ ME_163B =  {
     DisplayName            = _('ME-163B'),
     ViewSettings        = ViewSettings,
 
-    -- enables ME-163 for X counties
+    -- enables ME-163 for countries that had them - Including research
 	Countries = {"Germany","UK","USA","USAF Aggressors"},
         
     HumanCockpit         = false,
@@ -70,8 +70,8 @@ ME_163B =  {
                     212, -- right nose light
                     },
 	-------------------------
-    mapclasskey         = "P0091000024",
-    attribute              = {wsType_Air, wsType_Airplane, wsType_Fighter, WSTYPE_PLACEHOLDER, "Multirole fighters", "Refuelable" },
+    mapclasskey         = "P0091000024", --What is this?
+    attribute              = {wsType_Air, wsType_Airplane, wsType_Fighter, WSTYPE_PLACEHOLDER, "Multirole fighters" }, --Needs to be updated
     Categories = {"{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}", "Interceptor",},
     -------------------------
     M_empty                     	= 1905,		 	-- kg
