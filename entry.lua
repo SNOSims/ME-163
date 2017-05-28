@@ -9,10 +9,12 @@ version		 = "0.1.0",
 state		 = "installed",
 info		 = _("The Messerschmitt Me 163 Komet, designed by Alexander Lippisch, was a German rocket-powered fighter aircraft. It is the only rocket-powered fighter aircraft ever to have been operational and the first piloted aircraft of any type to exceed 1000 km/h (621 mph) in level flight. Its design was revolutionary and its performance unprecedented."),
 encyclopedia_path = current_mod_path..'/Encyclopedia',
+
 binaries   =
 {
-'FlightModel',
+	'F5E',
 },
+
 Skins	= 
 	{
 		{
@@ -47,9 +49,9 @@ mount_vfs_texture_path  (current_mod_path.."/Cockpit/Textures")
 mount_vfs_model_path	(current_mod_path.."/Cockpit/Shapes")
 mount_vfs_sound_path    (current_mod_path.."/Sounds")
 
-make_flyable('ME-163B'	, current_mod_path..'/Cockpit/Scripts/',FM, current_mod_path..'Comm/comm.lua')
-
 dofile(current_mod_path..'/Weapons/SNO_Weapons.lua') --Called first as weapons must be defined so that ME-163B can read
 dofile(current_mod_path..'/ME-163B.lua')
+
+make_flyable('ME-163B'	, current_mod_path..'/Cockpit/Scripts/', FM, current_mod_path..'Comm/comm.lua')
 
 plugin_done()-- finish declaration , clear temporal data
