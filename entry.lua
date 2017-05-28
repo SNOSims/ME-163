@@ -1,4 +1,6 @@
-declare_plugin("ME-163B by SNO Simulations",
+local self_ID = "ME-163B by SNO Simulations"
+
+declare_plugin(self_ID,
 {
 installed 	 = true, -- if false that will be place holder , or advertising
 dirName	  	 = current_mod_path,
