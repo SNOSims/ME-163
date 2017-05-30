@@ -48,6 +48,7 @@ mount_vfs_texture_path  (current_mod_path.."/Textures")
 mount_vfs_texture_path  (current_mod_path.."/Cockpit/Textures")
 mount_vfs_model_path	(current_mod_path.."/Cockpit/Shapes")
 mount_vfs_sound_path    (current_mod_path.."/Sounds")
+mount_vfs_model_path    (current_mod_path.."/Shapes")
 
 dofile(current_mod_path..'/Weapons/SNO_Weapons.lua') --Called first as weapons must be defined so that ME-163B can read
 dofile(current_mod_path..'/ME-163B.lua')
