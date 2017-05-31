@@ -4,6 +4,7 @@ mount_vfs_texture_archives("Bazar/Textures/AvionicsCommon")
 dofile(LockOn_Options.script_path.."devices.lua")
 dofile(LockOn_Options.common_script_path.."tools.lua")
 
+
 --	items in <...> are optional
 --
 -- MainPanel = {"NAME_OF_CLASS",
@@ -36,6 +37,7 @@ creators[devices.WEAPON_SYSTEM]	 = {"avSimpleWeaponSystem"  ,LockOn_Options.scri
 creators[devices.CLOCK]			 = {"avAChS_1"			    ,LockOn_Options.script_path.."clock.lua"}
 creators[devices.ADI]			 = {"avBaseIKP"			    ,LockOn_Options.script_path.."adi.lua"}
 creators[devices.ELECTRIC_SYSTEM]= {"avSimpleElectricSystem",LockOn_Options.script_path.."Systems/electric_system.lua"}
+creators[devices.EXTANIM]		 = {"avLuaDevice"			,LockOn_Options.script_path.."externalanimations.lua"}
 --RADAROFF creators[devices.RADAR]			 = {"avSimpleRadar"			,LockOn_Options.script_path.."RADAR/Device/init.lua"}
 
 -- Indicators

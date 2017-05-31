@@ -22,7 +22,7 @@ ME_163B =  {
     shape_table_data     = 
     {
         {
-            file       = 'ME-163B';
+            file       = 'me-163animated';
             life       = 18; -- lifebar
             vis        = 3;  -- visibility gain.
             desrt    = 'ME-163B_destr'; -- Name of destroyed object file name Alphajet-destr. This is a placeholder.
