@@ -17,7 +17,7 @@ ME_163B =  {
     
     Picture             = "ME-163B.png",
     Rate                 = 40, -- RewardPoint in Multiplayer
-    Shape                 = "ME-163B",
+    Shape                 = "me-163animated",
     
     shape_table_data     = 
     {
