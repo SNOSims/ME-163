@@ -14,7 +14,7 @@ encyclopedia_path = current_mod_path..'/Encyclopedia',
 
 binaries   =
 {
-	'F5E',
+	'F16DemoFM',
 },
 
 Skins	= 
