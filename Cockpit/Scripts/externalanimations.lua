@@ -31,7 +31,7 @@ function update()
 	set_aircraft_draw_argument_value(16, PITCH_STATE) -- left elevator
 
 	local RUDDER_STATE = sensor_data:getRudderPosition() / 100
-	set_aircraft_draw_argument_value(17, -RUDDER_STATE)
+	set_aircraft_draw_argument_value(17, -RUDDER_STATE) -- Rudder
 	
 	if wow > 0 then
         set_aircraft_draw_argument_value(2, -RUDDER_STATE*0.333) -- limit visual nosewheel deflection to 30 degrees
