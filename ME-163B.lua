@@ -319,16 +319,12 @@ Pylons =     {    },
 	
 ---------------------------------------------------------------------------------------------------------------------------------------------    
     Tasks = {
-        aircraft_task(CAS),
-        aircraft_task(SEAD),
-        aircraft_task(Reconnaissance),
         aircraft_task(GroundAttack),
         aircraft_task(AFAC),
         aircraft_task(RunwayAttack),
-        aircraft_task(AntishipStrike),
-        aircraft_task(Refueling)
+        aircraft_task(Intercept),
     },    
-    DefaultTask = aircraft_task(CAS),
+    DefaultTask = aircraft_task(Intercept),
 ---------------------------------------------------------------------------------------------------------------------------------------------
     SFM_Data = {
 		aerodynamics = -- Cx = Cx_0 + Cy^2*B2 +Cy^4*B4
