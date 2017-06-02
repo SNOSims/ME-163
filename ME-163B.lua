@@ -18,7 +18,7 @@ ME_163B =  {
     Picture             = "ME-163B.png",
     Rate                 = 40, -- RewardPoint in Multiplayer
     Shape                 = "me-163animated",
-    
+
     shape_table_data     = 
     {
         {
@@ -42,7 +42,7 @@ ME_163B =  {
     net_animation ={38, -- canopy
                     0, -- gear
 					400, --front gear door
-					402, --huffer
+					402, --Tractor
                     3,
                     5,
                     9,
