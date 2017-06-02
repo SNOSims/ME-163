@@ -69,7 +69,7 @@ ME_163B =  {
                     212, -- right nose light
                     },
 	-------------------------
-    mapclasskey         = "P0091000024", --What is this?
+    mapclasskey         = "P0091000024", --Fighter
     attribute              = {wsType_Air, wsType_Airplane, wsType_Fighter, WSTYPE_PLACEHOLDER, "Multirole fighters" }, --Needs to be updated
     Categories = {"{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}", "Interceptor",},
     -------------------------
