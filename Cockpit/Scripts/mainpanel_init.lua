@@ -1,4 +1,4 @@
-shape_name   	   = "Cockpit-Wunderluft"
+shape_name   	   = "me-163_cockpit"
 is_EDM			   = true
 new_model_format   = true
 ambient_light    = {255,255,255}
