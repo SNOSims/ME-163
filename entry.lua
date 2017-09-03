@@ -1,11 +1,11 @@
-local self_ID = "ME-163B by SNO Simulations"
+local self_ID = "ME-163B by Komet Simulations"
 
 declare_plugin(self_ID,
 {
 installed 	 = true, -- if false that will be place holder , or advertising
 dirName	  	 = current_mod_path,
 displayName  = _("ME-163B"),
-developerName   =   "SNO Simulations",
+developerName   =   "Komet Simulations",
 
 version		 = "0.1.0",		 
 state		 = "installed",
@@ -53,7 +53,7 @@ mount_vfs_sound_path(current_mod_path.."/Sounds")
 --mount_vfs_sound_path    (current_mod_path.."/Sounds") --This is obselete now
 mount_vfs_model_path    (current_mod_path.."/Shapes")
 
-dofile(current_mod_path..'/Weapons/SNO_Weapons.lua') --Called first as weapons must be defined so that ME-163B can read
+dofile(current_mod_path..'/Weapons/Komet_Weapons.lua') --Called first as weapons must be defined so that ME-163B can read
 dofile(current_mod_path..'/ME-163B.lua')
 
 
