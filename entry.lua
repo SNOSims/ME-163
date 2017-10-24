@@ -8,7 +8,7 @@ developerName   =   "Komet Simulations",
 installed 	 = true, -- if false that will be place holder , or advertising
 dirName	  	 = current_mod_path,
 fileMenuName = _("ME-163B"),
-update_id    = "KOMET_SIMULATIONS_M-163B", -- request from ED.
+--update_id    = "KOMET_SIMULATIONS_M-163B", -- request from ED.
 version		 = "0.1.1",		 
 state		 = "installed",
 info		 = _("The Messerschmitt Me 163 Komet, designed by Alexander Lippisch, was a German rocket-powered fighter aircraft. It is the only rocket-powered fighter aircraft ever to have been operational and the first piloted aircraft of any type to exceed 1000 km/h (621 mph) in level flight. Its design was revolutionary and its performance unprecedented."),
@@ -34,16 +34,6 @@ Missions =
 			CLSID		= "{CLSID5456456346CLSID}",	
 		},
 	},
-Options =
-    {
-        {
-            name		= _("ME-163B"),
-            nameId		= "ME-163B",
-            dir			= "Options",
-            CLSID		= "{ME-163B options}"
-        },
-    },
-
 LogBook =
 	{
 		{
