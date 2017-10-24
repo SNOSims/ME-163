@@ -73,8 +73,8 @@ ME_163B =  {
     attribute              = {wsType_Air, wsType_Airplane, wsType_Fighter, WSTYPE_PLACEHOLDER, "Multirole fighters" }, --Needs to be updated
     Categories = {"{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}", "Interceptor",},
     -------------------------
-    M_empty                     	= 1905,		 	-- kg
-    M_nominal                    	= 3950,		 	-- kg
+    M_empty                     	= 1905,		 	-- kg	(VERIFY)
+    M_nominal                    	= 3950,		 	-- kg	(VERIFY)
     M_max                         	= 4310,		 	-- kg (Maximum Take Off Weight) [Needs Checking]
     M_fuel_max                     	= 1527,	 		-- kg (Internal Fuel Only) [Needs Checking]
     H_max                          	= 16459,		-- m  (Maximum Operational Ceiling) [Needs Checking]
