@@ -167,7 +167,7 @@ ME_163B =  {
 			--ejection_order 		 = 2,			
 			--role 				 = "pilot",
 			--role_display_name    = _("Pilot"),	
-			g_suit 			   =  5 -- I'm assuming there are different levels of suits which black you out at different G's. We should try and experiment with different ones.
+			g_suit 			   =  1 -- I'm assuming there are different levels of suits which black you out at different G's. We should try and experiment with different ones.
         }, -- end of [1]
     }, -- end of crew_members
 ---------------------------------------------------------------------------------------------------------------------------------------------		
