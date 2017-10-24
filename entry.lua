@@ -2,11 +2,13 @@ local self_ID = "ME-163B by Komet Simulations"
 
 declare_plugin(self_ID,
 {
-installed 	 = true, -- if false that will be place holder , or advertising
-dirName	  	 = current_mod_path,
 displayName  = _("ME-163B"),
 developerName   =   "Komet Simulations",
 
+installed 	 = true, -- if false that will be place holder , or advertising
+dirName	  	 = current_mod_path,
+fileMenuName = _("ME-163B"),
+update_id    = "KOMET_SIMULATIONS_M-163B", -- request from ED.
 version		 = "0.1.1",		 
 state		 = "installed",
 info		 = _("The Messerschmitt Me 163 Komet, designed by Alexander Lippisch, was a German rocket-powered fighter aircraft. It is the only rocket-powered fighter aircraft ever to have been operational and the first piloted aircraft of any type to exceed 1000 km/h (621 mph) in level flight. Its design was revolutionary and its performance unprecedented."),
@@ -31,7 +33,17 @@ Missions =
 			dir			= "Missions",
 			CLSID		= "{CLSID5456456346CLSID}",	
 		},
-	},	
+	},
+Options =
+    {
+        {
+            name		= _("ME-163B"),
+            nameId		= "ME-163B",
+            dir			= "Options",
+            CLSID		= "{ME-163B options}"
+        },
+    },
+
 LogBook =
 	{
 		{
@@ -49,7 +61,7 @@ mount_vfs_liveries_path (current_mod_path.."/Liveries")
 mount_vfs_texture_path  (current_mod_path.."/Textures")
 mount_vfs_texture_path  (current_mod_path.."/Cockpit/Textures")
 mount_vfs_model_path	(current_mod_path.."/Cockpit/Shape")
-mount_vfs_sound_path(current_mod_path.."/Sounds")
+mount_vfs_sound_path	(current_mod_path.."/Sounds")
 --mount_vfs_sound_path    (current_mod_path.."/Sounds") --This is obselete now
 mount_vfs_model_path    (current_mod_path.."/Shapes")
 
