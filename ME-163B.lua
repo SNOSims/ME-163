@@ -112,7 +112,7 @@ ME_163B =  {
     average_fuel_consumption 		= 1,   -- 0.89 lb/lbf*hr = 1.246 kg/s for 100% thrust -- Needs updating once translated
     is_tanker       				= false,
     tanker_type     				= 2, -- Tanker type if the plane is tanker
-    air_refuel_receptacle_pos = {6.966, -0.366, 0.486}, 
+    air_refuel_receptacle_pos = {0, 0, 0}, 
     
 	-----------------------------------------------------------------------
 	----------------- SUSPENSION CODE BEGINS
