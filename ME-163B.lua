@@ -1,7 +1,3 @@
-------------------------------------------------------------------------------------
---mount_vfs_liveries_path (current_mod_path.."/Liveries")   -- mounted in entry.lua
---mount_vfs_texture_path  (current_mod_path.."/Textures")   -- mounted in entry.lua
-------------------------------------------------------------------------------------
 
 ME_163B =  {
         
