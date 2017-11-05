@@ -1,5 +1,23 @@
 ME-163B
 Plane/ME-163B.png
+ME-163B
+ME-163B
+
 
 Name: ME-163B
-Type: Interceptor
+Type: Fighter
+Crew: 1
+Length: 10.4 m
+Wing span: 10.08 m
+Height: 3.7 m
+Wing area: 20.6 m2
+Weight empty: 3582 kg
+Normal weight: 4960 kg
+Maximum weight: 6105 kg
+Maximum internal fuel: 1420 kg
+Maximum Mach at height: 0.92
+Service ceiling: 15500 m
+Maximum range: 1330 km
+G limit: 8.0
+Lift-to-drag ratio: 14.5
+Thrust/weight: 0.44
