@@ -12,15 +12,15 @@ planes = {
 --	Nevada
 	{
     name = _('Cold Start'),
-    file = 'Nevada me_163_cold_start.miz',
+    file = 'NTTR me_163_cold_start.miz',
     },
 	{
     name = _('Take off'),
-    file = 'Nevada me_163_take_off.miz',
+    file = 'NTTR me_163_take_off.miz',
     },
 	{
     name = _('Free Flight'),
-    file = 'Nevada me_163_free_flight.miz',
+    file = 'NTTR me_163_free_flight.miz',
     },
 	
 --	Normandy
