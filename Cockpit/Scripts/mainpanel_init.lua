@@ -1,4 +1,4 @@
-shape_name   	   = "me-163_cockpit"
+shape_name   	   = "Cockpit_ME-163B"
 is_EDM			   = true
 new_model_format   = true
 ambient_light    = {255,255,255}
@@ -79,14 +79,14 @@ Landinggearhandle.controller				= controllers.base_gauge_LandingGearHandlePos
 ---------------------------------------------------------------
 
 Engine_RPM							= CreateGauge()
-Engine_RPM.arg_number				= 50
+Engine_RPM.arg_number				= 715
 Engine_RPM.input					= {0.0, 110.0} 
 Engine_RPM.output					= {0.0, 1.0}
 Engine_RPM.controller				= controllers.base_gauge_EngineLeftRPM
 
 
 Engine_TEMP							= CreateGauge()
-Engine_TEMP.arg_number				= 51
+Engine_TEMP.arg_number				= 716
 Engine_TEMP.input					= {300, 900} 
 Engine_TEMP.output					= {0.0, 1.00}
 Engine_TEMP.controller				= controllers.base_gauge_EngineLeftTemperatureBeforeTurbine
