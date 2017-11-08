@@ -95,7 +95,7 @@ Engine_TEMP.controller				= controllers.base_gauge_EngineLeftTemperatureBeforeTu
 -- INSTRUMENTS
 ---------------------------------------------------------------
 IndicatedAirSpeed							= CreateGauge()
-IndicatedAirSpeed.arg_number				= 100
+IndicatedAirSpeed.arg_number				= 710
 IndicatedAirSpeed.input						= {0.0, 600}  --m/s
 IndicatedAirSpeed.output					= {0.0, 1.0}
 IndicatedAirSpeed.controller				= controllers.base_gauge_IndicatedAirSpeed
