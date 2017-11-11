@@ -60,5 +60,7 @@ dofile(current_mod_path..'/ME-163B.lua')
 
 
 make_flyable('ME-163B'	, current_mod_path..'/Cockpit/Scripts/', FM, current_mod_path..'Comm/comm.lua')
+dofile(current_mod_path.."/Views.lua")
+make_view_settings('A-4E', ViewSettings, SnapViews)
 
 plugin_done()-- finish declaration , clear temporal data
