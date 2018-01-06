@@ -6,7 +6,7 @@ ME_163B =  {
     ViewSettings        = ViewSettings,
 
     -- enables ME-163 for countries that had them - Including researchd
-	Countries = {"Germany","UK","USA","USAF Aggressors"},
+	Countries = {"Germany","UK","USAF Aggressors"},
         
     HumanCockpit         = false,
     HumanCockpitPath    = current_mod_path..'/Cockpit/',
