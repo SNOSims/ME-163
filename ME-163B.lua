@@ -98,18 +98,18 @@ ME_163B =  {
     V_max_h         				= 300.8, 		-- Max speed at max altitude in m/s (for AI)    
     Vy_max             				= 93, 			-- Max climb speed in m/s (for AI - 180kts)
     Mach_max         				= 0.88, 		-- Max speed in Mach (for AI)    
-    Ny_min             				= -3.0, 		-- Min G (for AI)
-    Ny_max             				= 8.0, 			-- Max G (for AI)
-    Ny_max_e         				= 8.0, 			-- Max G (for AI)
+    Ny_min             				= -2.0, 		-- Min G (for AI)
+    Ny_max             				= 7.5, 			-- Max G (for AI)
+    Ny_max_e         				= 7.5, 			-- Max G (for AI)
     --AOA_take_off     = 0.27, -- AoA in take off radians (for AI)   16 degrees 
     bank_angle_max     				= 60, -- Max bank angle (for AI)
     range             				= 150, -- Max range in km (for AI)
     
-    thrust_sum_max     				= 17000, -- thrust in kg (J52 P8A: 9300 lb)    **
+    thrust_sum_max     				= 16903, -- thrust in kg (J52 P8A: 9300 lb)    **
     has_afteburner  				= true,
 	has_differential_stabilizer		=	false,
-    thrust_sum_ab   				= 17000, -- thrust in kg (kN)    **
-    average_fuel_consumption 		= 1,   -- 0.89 lb/lbf*hr = 1.246 kg/s for 100% thrust -- Needs updating once translated
+    thrust_sum_ab   				= 16903, -- thrust in kg (kN)    **
+    average_fuel_consumption 		= 1,   -- 0.89 lb/lbf*hr = 1.246 kg/s for 100% thrust -- Needs updating once translated and value type needs to be determined, what units
     is_tanker       				= false,
     tanker_type     				= 2, -- Tanker type if the plane is tanker
     air_refuel_receptacle_pos = {0, 0, 0}, 
