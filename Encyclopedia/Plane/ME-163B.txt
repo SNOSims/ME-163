@@ -1,23 +1,56 @@
-ME-163B
+Me-163B
+
 Plane/ME-163B.png
-ME-163B
+
 ME-163B
 
 
-Name: ME-163B
-Type: Fighter
+
+
+
+Name: Me-163B
+ "Komet"
+Maiden flight: 8. August 1941
+Operational Service: late 1944
+Type: Fighter/Interceptor
 Crew: 1
+
+Power plant:HWK 109-509 A-1
+Thrust: 15,7 kN
+
+
+Dimensions:
+
 Length: 10.4 m
+
 Wing span: 10.08 m
 Height: 3.7 m
+
 Wing area: 20.6 m2
-Weight empty: 3582 kg
-Normal weight: 4960 kg
-Maximum weight: 6105 kg
-Maximum internal fuel: 1420 kg
+Weight empty: 1'905 kg
+
+Normal weight: 3'950 kg
+Maximum weight: 4'310 kg
+
+Maximum internal fuel: 1'420 kg
+
+
+Performance: 
+
 Maximum Mach at height: 0.92
-Service ceiling: 15500 m
-Maximum range: 1330 km
+Service ceiling: 15'500 m
+
+Maximum range: 50 km
+Climg rate: 4'862 m/min
+9'145m in 2 min 36 sec
 G limit: 8.0
+
 Lift-to-drag ratio: 14.5
+
 Thrust/weight: 0.44
+Engine burn time: 5 min
+Maximum speed: 900 kph
+Landing Speed: 160 kph
+
+
+Armament: 2x Mk-108, 60 rounds per gun
