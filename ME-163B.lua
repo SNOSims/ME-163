@@ -189,11 +189,11 @@ ME_163B =  {
 
     --- Countermeasures---
     SingleChargeTotal         = 0,
-    CMDS_Incrementation     = 1,
+    CMDS_Incrementation     = 0,
     ChaffDefault             = 0, 
-    ChaffChargeSize         = 1,
+    ChaffChargeSize         = 0,
     FlareDefault             = 0, 
-    FlareChargeSize         = 1,
+    FlareChargeSize         = 0,
     CMDS_Edit                 = false,
     chaff_flare_dispenser     = {
     }, -- end of chaff_flare_dispenser
