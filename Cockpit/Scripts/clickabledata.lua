@@ -289,7 +289,7 @@ elements["PNT_720"] = default_button("Show EXT Fuel", devices.AVIONICS, device_c
 
 -- TESTING SECTION
 elements["PNT_30"] = default_axis("Oxygen Valve", devices.AVIONICS, device_commands.AltPressureKnob, 728, 0, 0.05, false, true)	
-elements["PNT_59"] = default_button("Button 1", devices.TEST, device_commands.Button_15,757)
+elements["PNT_59"] = default_button("Button 1", devices.TEST, device_commands.Button_01,757)
 
 
 
