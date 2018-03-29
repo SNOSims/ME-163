@@ -11,4 +11,7 @@ devices["ELECTRIC_SYSTEM"]			= counter()--3
 devices["CLOCK"]					= counter()--4
 devices["ADI"]						= counter()--5
 devices["RADAR"]					= counter()--6
+devices["OXYGEN"]					= counter()--7
+devices["BUTTON"]					= counter()--8
+
 

@@ -287,8 +287,10 @@ elements["PNT_709"] = default_2_position_tumb("Master armament",devices.WEAPON_S
 -- MISC SWITCHES PANEL #36
 elements["PNT_720"] = default_button("Show EXT Fuel", devices.AVIONICS, device_commands.FuelGaugeExtButton, 720)
 
--- ALTIMETER PANEL #41
-elements["oxygen_valve"] = default_axis("oxygen_valve", devices.AVIONICS, device_commands.AltPressureKnob, 728, 0, 0.05, false, true)	
+-- TESTING SECTION
+elements["PNT_30"] = default_axis("Oxygen Valve", devices.AVIONICS, device_commands.AltPressureKnob, 728, 0, 0.05, false, true)	
+elements["PNT_59"] = default_button("Button 1", devices.TEST, device_commands.Button_15,757)
+
 
 
 for i,o in pairs(elements) do
