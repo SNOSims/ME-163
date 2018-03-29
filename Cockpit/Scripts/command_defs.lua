@@ -4,6 +4,7 @@ Keys =
     PlanePickleOff  = 351,
     PlaneFireOn     = 84,
     PlaneFireOff    = 85,
+	iCommandDoMiGSalute= 1234,
 }
 
 start_command   = 3000
