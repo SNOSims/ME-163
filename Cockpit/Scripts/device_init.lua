@@ -1,9 +1,7 @@
-mount_vfs_model_path(LockOn_Options.script_path.."../Resources/Model/Shape")
 mount_vfs_texture_archives("Bazar/Textures/AvionicsCommon")
 
 dofile(LockOn_Options.script_path.."devices.lua")
 dofile(LockOn_Options.common_script_path.."tools.lua")
-
 
 --	items in <...> are optional
 --
@@ -37,25 +35,21 @@ creators[devices.WEAPON_SYSTEM]	 = {"avSimpleWeaponSystem"  ,LockOn_Options.scri
 creators[devices.CLOCK]			 = {"avAChS_1"			    ,LockOn_Options.script_path.."clock.lua"}
 creators[devices.ADI]			 = {"avBaseIKP"			    ,LockOn_Options.script_path.."adi.lua"}
 creators[devices.ELECTRIC_SYSTEM]= {"avSimpleElectricSystem",LockOn_Options.script_path.."Systems/electric_system.lua"}
-creators[devices.EXTANIM]		 = {"avLuaDevice"			,LockOn_Options.script_path.."externalanimations.lua"}
---RADAROFF creators[devices.RADAR]			 = {"avSimpleRadar"			,LockOn_Options.script_path.."RADAR/Device/init.lua"}
-}
+
 -- Indicators
 indicators = {}
 --indicators[#indicators + 1] = {"ccIndicator" ,LockOn_Options.script_path.."HUD/Indicator/init.lua"  ,nil,{{"PNT-HUD-CENTER","PNT-HUD-DOWN","PNT-HUD-RIGHT"},{sx_l = 0,sy_l = 0,sz_l = 0,sh = 0,sw = 0}}} --HUD
---RADAROFF indicators[#indicators + 1] = {"ccIndicator",LockOn_Options.script_path.."RADAR/Indicator/init.lua",--init script
---RADAROFF   nil,--id of parent device
---RADAROFF   {	
---RADAROFF 	{}, -- initial geometry anchor , triple of connector names 
---RADAROFF 	{sx_l =  0,  -- center position correction in meters (forward , backward)
---RADAROFF 	 sy_l =  0,  -- center position correction in meters (up , down)
---RADAROFF 	 sz_l =  0,  -- center position correction in meters (left , right)
---RADAROFF 	 sh   =  0,  -- half height correction 
---RADAROFF 	 sw   =  0,  -- half width correction 
---RADAROFF 	 rz_l =  0,  -- rotation corrections  
---RADAROFF 	 rx_l =  0,
---RADAROFF 	 ry_l =  0}
---RADAROFF   }
---RADAROFF } --RADAR
-
-			 
+indicators[#indicators + 1] = {"ccIndicator",LockOn_Options.script_path.."RADAR/Indicator/init.lua",--init script
+  nil,--id of parent device
+  {	
+	{}, -- initial geometry anchor , triple of connector names 
+	{sx_l =  0,  -- center position correction in meters (forward , backward)
+	 sy_l =  0,  -- center position correction in meters (up , down)
+	 sz_l =  0,  -- center position correction in meters (left , right)
+	 sh   =  0,  -- half height correction 
+	 sw   =  0,  -- half width correction 
+	 rz_l =  0,  -- rotation corrections  
+	 rx_l =  0,
+	 ry_l =  0}
+  }
+} --RADAR
