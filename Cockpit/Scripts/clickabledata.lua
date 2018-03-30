@@ -262,7 +262,7 @@ end
 
 elements = {}
 
-elements["PNT_59"] = default_button(LOCALIZE("Test Command"),devices.TEST, device_commands.Button_1,757) -- 44 arg number
+elements["PNT_59"] = default_button(LOCALIZE("Test Command"),devices.TEST, device_commands.Button_59,757) -- 44 arg number
 
 for i,o in pairs(elements) do
 	if  o.class[1] == class_type.TUMB or 
