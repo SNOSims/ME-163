@@ -1,6 +1,5 @@
 dofile(LockOn_Options.script_path.."command_defs.lua")
 dofile(LockOn_Options.script_path.."devices.lua")
---dofile(LockOn_Options.common_script_path..'localizer.lua')
 
 local gettext = require("i_18n")
 _ = gettext.translate
@@ -263,35 +262,7 @@ end
 
 elements = {}
 
---Spoilers
-elements["PNT_84"] = default_2_position_tumb("Spoiler Arm Switch",devices.SPOILERS, device_commands.spoiler_arm,84)
-
---ENGINE CONTROL PANEL
-elements["PNT_200"] = default_2_position_tumb("Starter switch",devices.ENGINE, device_commands.push_starter_switch,200)
-elements["PNT_201"] = default_3_position_tumb("Throttle cutoff",devices.ENGINE, device_commands.throttle,201,false)
-
---ARMAMENT PANEL #35
-elements["PNT_701"] = default_2_position_tumb("Guns switch",devices.WEAPON_SYSTEM, device_commands.arm_gun,701)
--- elements["PNT_702"]
-elements["PNT_703"] = default_3_position_tumb("Station 1 select",devices.WEAPON_SYSTEM, device_commands.arm_station1,703,false)
-elements["PNT_704"] = default_3_position_tumb("Station 2 select",devices.WEAPON_SYSTEM, device_commands.arm_station2,704,false)
-elements["PNT_705"] = default_3_position_tumb("Station 3 select",devices.WEAPON_SYSTEM, device_commands.arm_station3,705,false)
-elements["PNT_706"] = default_3_position_tumb("Station 4 select",devices.WEAPON_SYSTEM, device_commands.arm_station4,706,false)
-elements["PNT_707"] = default_3_position_tumb("Station 5 select",devices.WEAPON_SYSTEM, device_commands.arm_station5,707,false)
-elements["PNT_708"] = multiposition_switch_limited("Function selector",devices.WEAPON_SYSTEM, device_commands.arm_func_selector,708,6,0.1,true)
-elements["PNT_708"].animated        = {true, true}
-elements["PNT_708"].animation_speed = {0.5, 0.5}
-
-elements["PNT_709"] = default_2_position_tumb("Master armament",devices.WEAPON_SYSTEM, device_commands.arm_master,709)
-
--- MISC SWITCHES PANEL #36
-elements["PNT_720"] = default_button("Show EXT Fuel", devices.AVIONICS, device_commands.FuelGaugeExtButton, 720)
-
--- TESTING SECTION
-elements["PNT_30"] = default_axis("Oxygen Valve", devices.AVIONICS, device_commands.AltPressureKnob, 728, 0, 0.05, false, true)	
-elements["PNT_59"] = default_button("Button 1", devices.TEST, device_commands.Button_01,757)
-
-
+elements["PNT_59"] = default_button(LOCALIZE("Test Command"),devices.TEST, device_commands.Button_1,757) -- 44 arg number
 
 for i,o in pairs(elements) do
 	if  o.class[1] == class_type.TUMB or 
