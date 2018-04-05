@@ -49,8 +49,8 @@ InputProfiles =
 ---------------------------------------------------------------------------------------
 mount_vfs_liveries_path (current_mod_path.."/Liveries")
 mount_vfs_texture_path  (current_mod_path.."/Textures")
-mount_vfs_texture_path  (current_mod_path.."/Cockpit/Textures")
-mount_vfs_model_path	(current_mod_path.."/Cockpit/Shape")
+mount_vfs_texture_path  (current_mod_path.."/Cockpit/Textures") -- Cockpit Textures
+mount_vfs_model_path	(current_mod_path.."/Cockpit/Shape") -- Cockpit Model
 --mount_vfs_sound_path	(current_mod_path.."/Sounds")
 --mount_vfs_sound_path    (current_mod_path.."/Sounds") --This is obselete now
 mount_vfs_model_path    (current_mod_path.."/Shapes")
