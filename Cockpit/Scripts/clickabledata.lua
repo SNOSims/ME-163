@@ -264,17 +264,10 @@ elements = {}
 
 
 --Joystick
-elements["PNT_053"] = default_button("SALVO JETTISON", devices.TEST, device_commands.Button_59,751)
-elements["PNT_054"] = default_button("Gun Safety", devices.TEST, device_commands.Button_59,752)
-elements["PNT_055"] = default_button("SALVO JETTISON", devices.TEST, device_commands.Button_59,753)
-elements["PNT_056"] = default_button("SALVO JETTISON", devices.TEST, device_commands.Button_59,754)
-elements["PNT_057"] = default_button("SALVO JETTISON", devices.TEST, device_commands.Button_59,755)
-elements["PNT_058"] = default_button("SALVO JETTISON", devices.TEST, device_commands.Button_59,756)
-elements["PNT_059"] = default_button("SALVO JETTISON", devices.TEST, device_commands.Button_59,757)
+elements["PNT_059"] = default_button("Button 1", devices.TEST, device_commands.Button_59,757)
 
 
 --Buttons
-elements["PNT_060"] = default_button("SALVO JETTISON", devices.TEST, device_commands.Button_60,758)
 
 for i,o in pairs(elements) do
 	if  o.class[1] == class_type.TUMB or 
