@@ -268,13 +268,18 @@ elements["PNT_053"] = default_animated_lever(_("Gun Safety"), devices.TEST, devi
 elements["PNT_054"] = default_button(_("Trigger"), devices.TEST, device_commands.Button_54, 752)
 
 --Radio
-elements["PNT_077"]	= multiposition_switch_limited(_("Frequency"), devices.TEST, device_commands.Button_77, 775, 4, 0.25)
+elements["PNT_077"] = multiposition_switch(_("Frequency"), devices.TEST, device_commands.Button_77, 775, 4, 0.25, false)
+elements["PNT_029_1"]	= default_1_position_tumb(_("Cockpit.Bf109K4.fug16zy_mode_1"), devices.TEST, device_commands.Button_2, 775, 0, {0.0, 0.0})
+elements["PNT_029_2"]	= default_1_position_tumb(_("Cockpit.Bf109K4.fug16zy_mode_2"), devices.TEST, device_commands.Button_2, 775, 0, {0.25, 0.25})
+elements["PNT_029_TR"]	= default_1_position_tumb(_("Cockpit.Bf109K4.fug16zy_mode_tr"), devices.TEST, device_commands.Button_2, 775, 0, {0.50, 0.2})
+elements["PNT_029_SQ"]	= default_1_position_tumb(_("Cockpit.Bf109K4.fug16zy_mode_sq"), devices.TEST, device_commands.Button_2, 775, 0, {0.75, 0.75})
 
 --Buttons
-elements["PNT_059"] = default_button("Button 1", devices.TEST, device_commands.Button_59,757)
+elements["PNT_059"] 	= default_button("Button 1", devices.TEST, device_commands.Button_59,757)
 
 --Climate controls
-elements["PNT_029"] = default_axis(_("Oxygen Valvee"),devices.TEST, device_commands.Button_29, 728, 1.0, -0.1, false, false)
+elements["PNT_029"] 	= default_axis(_("Oxygen Valve"),devices.TEST, device_commands.Button_29, 728, 1, -0.1, false, false)
+
 
 ------------------------------------------------------------------
 for i,o in pairs(elements) do
