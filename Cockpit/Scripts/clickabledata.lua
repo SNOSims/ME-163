@@ -270,7 +270,7 @@ elements["PNT_053"] = default_animated_lever(_("Gun Safety"), devices.TEST, devi
 elements["PNT_059"] = default_button("Button 1", devices.TEST, device_commands.Button_59,757)
 
 --Climate controls
-elements["PNT_029"] = default_animated_lever(_("Oxygen Valve"), devices.TEST, device_commands.Button_29, 728, 0.6)
+elements["PNT_029"] = default_axis(_("Oxygen Valvee"),devices.TEST, device_commands.Button_29, 728, 1.0, -0.1, false, false)
 
 ------------------------------------------------------------------
 for i,o in pairs(elements) do
