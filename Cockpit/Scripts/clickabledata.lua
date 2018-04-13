@@ -265,6 +265,10 @@ elements = {}
 
 --Joystick
 elements["PNT_053"] = default_animated_lever(_("Gun Safety"), devices.TEST, device_commands.Button_53, 751, 3.0)
+elements["PNT_054"] = default_button(_("Trigger"), devices.TEST, device_commands.Button_54, 752)
+
+--Radio
+elements["PNT_077"]	= multiposition_switch_limited(_("Frequency"), devices.TEST, device_commands.Button_77, 128, 4, 0.1)
 
 --Buttons
 elements["PNT_059"] = default_button("Button 1", devices.TEST, device_commands.Button_59,757)
