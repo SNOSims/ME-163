@@ -264,11 +264,15 @@ elements = {}
 
 
 --Joystick
-elements["PNT_059"] = default_button("Button 1", devices.TEST, device_commands.Button_59,757)
-
+elements["PNT_053"] = default_animated_lever(_("Gun Safety"), devices.TEST, device_commands.Button_53, 751, 3.0)
 
 --Buttons
+elements["PNT_059"] = default_button("Button 1", devices.TEST, device_commands.Button_59,757)
 
+--Climate controls
+elements["PNT_029"] = default_animated_lever(_("Oxygen Valve"), devices.TEST, device_commands.Button_29, 728, 0.6)
+
+------------------------------------------------------------------
 for i,o in pairs(elements) do
 	if  o.class[1] == class_type.TUMB or 
 	   (o.class[2]  and o.class[2] == class_type.TUMB) or
