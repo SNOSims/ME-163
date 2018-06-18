@@ -14,5 +14,3 @@ devices["RADAR"]					= counter()--6
 devices["OXYGEN"]					= counter()--7
 devices["BUTTON"]					= counter()--8
 devices["VHF_RADIO"]				= counter()--9
-
-
