@@ -51,15 +51,15 @@ mount_vfs_liveries_path (current_mod_path.."/Liveries")
 mount_vfs_texture_path  (current_mod_path.."/Textures")
 mount_vfs_texture_path  (current_mod_path.."/Cockpit/Textures") -- Cockpit Textures
 mount_vfs_model_path	(current_mod_path.."/Cockpit/Shape") -- Cockpit Model
---mount_vfs_sound_path	(current_mod_path.."/Sounds")
---mount_vfs_sound_path    (current_mod_path.."/Sounds") --This is obselete now
+--mount_vfs_sound_path  (current_mod_path.."/Sounds") --This is obselete now
 mount_vfs_model_path    (current_mod_path.."/Shapes")
 
-dofile(current_mod_path..'/Weapons/Komet_Weapons.lua') --Called first as weapons must be defined so that ME-163B can read
+dofile(current_mod_path..'/Weapons/Komet_Weapons.lua') 
 dofile(current_mod_path..'/ME-163B.lua')
 
 
-make_flyable('ME-163B'	, current_mod_path..'/Cockpit/Scripts/', FM, current_mod_path..'Comm/comm.lua')
+--make_flyable('ME-163B', current_mod_path..'/Cockpit/Scripts/', FM, current_mod_path..'Comm/comm.lua')
+make_flyable('ME-163B', current_mod_path..'/Cockpit/Scripts/', {nil, old = 4}, current_mod_path..'Comm/comm.lua')
 dofile(current_mod_path.."/Views.lua")
 make_view_settings('ME-163B', ViewSettings, SnapViews)
 
