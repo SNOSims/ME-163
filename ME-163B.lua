@@ -1,21 +1,21 @@
 
 ME_163B =  {
-        
+
     Name                 =   'ME-163B',
     DisplayName            = _('ME-163B'),
     ViewSettings        = ViewSettings,
 
     -- enables ME-163 for countries that had them - Including researchd
 	Countries = {"Germany","UK","USAF Aggressors"},
-        
+
     HumanCockpit         = false,
     HumanCockpitPath    = current_mod_path..'/Cockpit/',
-    
+
     Picture             = "ME-163B.png",
     Rate                 = 40, -- RewardPoint in Multiplayer
     Shape                 = "me-163animated",
 
-    shape_table_data     = 
+    shape_table_data     =
     {
         {
             file       = 'me-163animated';
@@ -42,7 +42,7 @@ ME_163B =  {
                     3,
                     5,
                     9,
-                    10, 
+                    10,
                     11, -- aileron
                     15, -- stabilizer
                     20,  -- flaps
@@ -75,36 +75,36 @@ ME_163B =  {
     M_fuel_max                     	= 1527,	 		-- kg (Internal Fuel Only) [Needs Checking]
     H_max                          	= 16459,		-- m  (Maximum Operational Ceiling) [Needs Checking]
 	-------------------------
-    length             				= 5.98, 		-- full lenght in m        
-    height             				= 2.75, 		-- height in m                    
+    length             				= 5.98, 		-- full lenght in m
+    height             				= 2.75, 		-- height in m
     wing_area         				= 18.5, 		-- wing area in m2     -- Got a source with 18.5, 19.6 was original    **
-    wing_span         				= 9.33, 		-- wing span in m        
-    wing_tip_pos     				= {-2.5, -0.38,    4.2}, -- wingtip coords for visual effects        
+    wing_span         				= 9.33, 		-- wing span in m
+    wing_tip_pos     				= {-2.5, -0.38,    4.2}, -- wingtip coords for visual effects
     wing_type         				= 0,    		-- FIXED_WING = 0 /VARIABLE_GEOMETRY = 1 /FOLDED_WING = 2 /ARIABLE_GEOMETRY_FOLDED = 3
     flaps_maneuver     				= 0.5, 			-- Max flaps in take-off and maneuver (0.5 = 1st stage; 1.0 = 2nd stage) (for AI)
     has_speedbrake    				= false,
-    
+
     RCS                     		= 1, 			-- Radar Cross Section m2
     IR_emission_coeff         		= 0.5, 			-- Normal engine -- IR_emission_coeff = 1 is Su-27 without afterburner. It is reference.
     IR_emission_coeff_ab    		= 0.5, 			-- With afterburner
-    
+
     stores_number    				= 0, 			-- Amount of pylons. [CHECKED]
-    
+
     CAS_min            				= 25.7, 		-- minimal indicated airspeed  m/s?  (50 knots per NATOPS)
     V_opt            				= 200, 			-- Cruise speed (for AI)
-    V_take_off        				= 77, 			-- Take off speed in m/s (for AI - 150kts)    
+    V_take_off        				= 77, 			-- Take off speed in m/s (for AI - 150kts)
     V_land            				= 58, 			-- Land speed in m/s (for AI) (110 kn)
-    V_max_sea_level 				= 300.83, 		-- Max speed at sea level in m/s (for AI) 
-    V_max_h         				= 300.8, 		-- Max speed at max altitude in m/s (for AI)    
+    V_max_sea_level 				= 300.83, 		-- Max speed at sea level in m/s (for AI)
+    V_max_h         				= 300.8, 		-- Max speed at max altitude in m/s (for AI)
     Vy_max             				= 93, 			-- Max climb speed in m/s (for AI - 180kts)
-    Mach_max         				= 0.88, 		-- Max speed in Mach (for AI)    
+    Mach_max         				= 0.88, 		-- Max speed in Mach (for AI)
     Ny_min             				= -2.0, 		-- Min G (for AI)
     Ny_max             				= 7.5, 			-- Max G (for AI)
     Ny_max_e         				= 7.5, 			-- Max G (for AI)
-    --AOA_take_off     = 0.27, -- AoA in take off radians (for AI)   16 degrees 
+    --AOA_take_off     = 0.27, -- AoA in take off radians (for AI)   16 degrees
     bank_angle_max     				= 60, -- Max bank angle (for AI)
     range             				= 150, -- Max range in km (for AI)
-    
+
     thrust_sum_max     				= 16903, -- thrust in kg (J52 P8A: 9300 lb)    **
     has_afteburner  				= false,
 	has_differential_stabilizer		= false,
@@ -112,35 +112,35 @@ ME_163B =  {
     average_fuel_consumption 		= 1,   -- 0.89 lb/lbf*hr = 1.246 kg/s for 100% thrust -- Needs updating once translated and value type needs to be determined, what units
     is_tanker       				= false,
     tanker_type     				= 2, -- Tanker type if the plane is tanker
-    air_refuel_receptacle_pos = {0, 0, 0}, 
-    
+    air_refuel_receptacle_pos = {0, 0, 0},
+
 	-----------------------------------------------------------------------
 	----------------- SUSPENSION CODE BEGINS
 	-----------------------------------------------------------------------
     nose_gear_pos = {2.72, -2.38, 0}, --{2.72, -2.37, 0},    --      2.72,       -2.28,    0
     main_gear_pos = {-0.79, -2.46, 1.18}, --{-0.79, -2.42, 1.18},    --  0.79,   -2.35,    1.18
     tand_gear_max = 0.554, -- // tangent on maximum yaw angle of front wheel
-    
+
     nose_gear_amortizer_direct_stroke    = 0.1, --1.878 - 1.878,  -- down from nose_gear_pos !!!
-    nose_gear_amortizer_reversal_stroke  = -0.32, --1.348 - 1.878,  -- up 
+    nose_gear_amortizer_reversal_stroke  = -0.32, --1.348 - 1.878,  -- up
     main_gear_amortizer_direct_stroke     = 0.1, --1.592 - 1.592, --  down from main_gear_pos !!!
-    main_gear_amortizer_reversal_stroke  = -0.43, --1.192 - 1.592, --  up 
-    
+    main_gear_amortizer_reversal_stroke  = -0.43, --1.192 - 1.592, --  up
+
     nose_gear_amortizer_normal_weight_stroke = -0.18, -- 0.144
     main_gear_amortizer_normal_weight_stroke = -0.38, --
-    
+
     nose_gear_wheel_diameter    =   0.441, --0.441, --*
     main_gear_wheel_diameter    =   0.609, --0.609, --*
     brakeshute_name    = 0, -- Landing - brake chute visual shape after separation
-	
+
 	-----------------------------------------------------------------------
 	----------------- SUSPENSION CODE ENDS
 	-----------------------------------------------------------------------
-    
+
     engines_count    = 1,
-    engines_nozzles = 
+    engines_nozzles =
     {
-        [1] = 
+        [1] =
         {
             pos =     {-3.383,	.031, -.002}, -- nozzle coords
             elevation    =    0.0, -- AFB cone elevation
@@ -150,28 +150,28 @@ ME_163B =  {
             smokiness_level     =     0.15,
         }, -- end of [1]
     }, -- end of engines_nozzles
-    
+
     crew_size    = 1,
-    crew_members = 
+    crew_members =
     {
-        [1] = 
+        [1] =
         {
             ejection_seat_name = "pilot+ejectionseat",
             drop_canopy_name    =    "pilot+ejectionseat", --Check the Canopy name with other files,
             pos =  {4,	1,	0}, --changes the position of the cockpit view {3.077,    0.574,    0}
             canopy_pos = {4,	1,	0},
 			--ejection_play_arg = 149,
-			--can_be_playable 	= true,				
+			--can_be_playable 	= true,
 			--ejection_through_canopy = true,
 			--ejection_added_speed = {-5,15,0},
-			--ejection_order 		 = 2,			
+			--ejection_order 		 = 2,
 			--role 				 = "pilot",
-			--role_display_name    = _("Pilot"),	
+			--role_display_name    = _("Pilot"),
 			g_suit 			   =  1 -- I'm assuming there are different levels of suits which black you out at different G's. We should try and experiment with different ones.
         }, -- end of [1]
     }, -- end of crew_members
----------------------------------------------------------------------------------------------------------------------------------------------		
-    fires_pos = 
+---------------------------------------------------------------------------------------------------------------------------------------------
+    fires_pos =
     {
         [1] =     {-0.232,    0.262,    0}, 	-- Fuselage
         [2] =     {-2,    -0.5,    1.3}, 		-- wing (inner?) right
@@ -185,19 +185,19 @@ ME_163B =  {
         [10] =     {-7.728,    0.039,    0.5},  -- Right Engine? {0.304,    -0.748,    0.442},
         [11] =     {-7.728,    0.039,    -0.5}, -- ?
     }, -- end of fires_pos
----------------------------------------------------------------------------------------------------------------------------------------------	
+---------------------------------------------------------------------------------------------------------------------------------------------
 
     --- Countermeasures---
     SingleChargeTotal         = 0,
     CMDS_Incrementation     = 0,
-    ChaffDefault             = 0, 
+    ChaffDefault             = 0,
     ChaffChargeSize         = 0,
-    FlareDefault             = 0, 
+    FlareDefault             = 0,
     FlareChargeSize         = 0,
     CMDS_Edit                 = false,
     chaff_flare_dispenser     = {
     }, -- end of chaff_flare_dispenser
-    
+
 --sensors
 
     HumanRadio = {
@@ -207,11 +207,11 @@ ME_163B =  {
         maxFrequency = 399.900,
         modulation = MODULATION_AM
     },
-    
+
     panelRadio = { -- Research to be done on radio, I'm betting it is similar to the 109 or 190 radio
         [1] = {
-            name = _("AN/ARC-27A"),		   
-            range = {	
+            name = _("AN/ARC-27A"),
+            range = {
                 {min = 225.0, max = 399.9}
             },
             channels = {  -- matches L-39C except for channel 8, which was changed to a Georgian airport and #20 which is NTTR only (for now).  This radio goes 1-20 not 0-19.
@@ -238,15 +238,15 @@ ME_163B =  {
             }
         },
     },
-        
-    LandRWCategories = 
+
+    LandRWCategories =
     {
-        [1] = 
+        [1] =
         {
             Name = "AircraftCarrier",
         }, -- end of [1]
     }, -- end of LandRWCategories
-    
+
     -- WingSpan = "8.38",--*
     -- MaxFuelWeight = "2498.4",
     -- MaxHeight = "12880",
@@ -255,20 +255,20 @@ ME_163B =  {
     -- Picture = "A-4E.png",
     -- Rate = "40",
     -- Shape = "A-4E",
-    
-    TakeOffRWCategories = 
+
+    TakeOffRWCategories =
     {
-        [1] = 
+        [1] =
         {
             Name = "AircraftCarrier With Catapult",
         }, -- end of [1]
-        [2] = 
+        [2] =
         {
             Name = "AircraftCarrier With Tramplin",
         }, -- end of [2]
-    }, -- end of TakeOffRWCategories    
+    }, -- end of TakeOffRWCategories
     WorldID = ME_163B,
-        
+
     Failures = {
         { id = 'asc',         label = _('ASC'),         enable = false, hh = 0, mm = 0, mmint = 1, prob = 100 },
         { id = 'autopilot', label = _('AUTOPILOT'), enable = false, hh = 0, mm = 0, mmint = 1, prob = 100 },
@@ -282,7 +282,7 @@ ME_163B =  {
         { id = 'rws',          label = _('RWS'),         enable = false, hh = 0, mm = 0, mmint = 1, prob = 100 },
         { id = 'ecm',       label = _('ECM'),         enable = false, hh = 0, mm = 0, mmint = 1, prob = 100 },
         { id = 'hud',          label = _('HUD'),         enable = false, hh = 0, mm = 0, mmint = 1, prob = 100 },
-        { id = 'mfd',          label = _('MFD'),         enable = false, hh = 0, mm = 0, mmint = 1, prob = 100 },        
+        { id = 'mfd',          label = _('MFD'),         enable = false, hh = 0, mm = 0, mmint = 1, prob = 100 },
     },
 ---------------------------------------------------------------------------------------------------------------------------------------------
    -- Guns = {
@@ -292,48 +292,48 @@ ME_163B =  {
         --        effect_arg_number = 434,
         --        supply_position = {2, -0.3, -0.4},
        --         ejector_pos_connector = "GUN_EJECT_1",
-      --          }),             
+      --          }),
       --      coltMK12({muzzle_pos_connector = "GUN_POINT_2",
      --           rates = {1020},
                 --mixes = {{2,1,1,1,1,1}},
       --          effect_arg_number = 434,
       --          supply_position = {2, -0.3, -0.4},
       --          ejector_pos_connector = "GUN_EJECT_2",
-      --          }), 
+      --          }),
    -- },
-    
-    -- ammo_type = { 
+
+    -- ammo_type = {
         -- _("CM Combat Mix"),
         -- _("HEI High Explosive Incendiary"),
         -- _("TP Target Practice"),
     -- },
 
----------------------------------------------------------------------------------------------------------------------------------------------    
+---------------------------------------------------------------------------------------------------------------------------------------------
 Pylons =     {    },
----------------------------------------------------------------------------------------------------------------------------------------------    
+---------------------------------------------------------------------------------------------------------------------------------------------
 
-	
----------------------------------------------------------------------------------------------------------------------------------------------    
+
+---------------------------------------------------------------------------------------------------------------------------------------------
     Tasks = {
         aircraft_task(RunwayAttack),
         aircraft_task(Intercept),
-    },    
+    },
     DefaultTask = aircraft_task(Intercept),
 ---------------------------------------------------------------------------------------------------------------------------------------------
     SFM_Data = {
 		aerodynamics = -- Cx = Cx_0 + Cy^2*B2 +Cy^4*B4
 		{
 			Cy0	        =	-0.1,        -- zero AoA lift coefficient - Compared against real data for the airfoil.
-			Mzalfa	    =	4.355,       -- coefficients for pitch agility - Accurate for what the SFM 
+			Mzalfa	    =	4.355,       -- coefficients for pitch agility - Accurate for what the SFM
 			Mzalfadt	=	0.8,         -- coefficients for pitch agility - SFM Table accurate
-			kjx	        =	1.5,    
+			kjx	        =	1.5,
 			kjz 		=   0.00125,     -- Do not change, it's true of all aircraft
 			Czbe		=	-0.014,      -- coefficient, along Z axis (perpendicular), affects yaw, negative value means force orientation in FC coordinate system
 			cx_gear		=	0.0,--0.12,  -- coefficient, drag, gear
 			cx_flap		=	0.0,--0.095, -- coefficient, drag, full flaps
 			cy_flap		=	0.0,--0.24,  -- coefficient, normal force, lift, flaps
 			cx_brk		=	0.0,--0.08,  -- coefficient, drag, breaks
-			table_data  = 
+			table_data  =
 			{
             --       M       Cx0       Cya      B        B4          Omxmax   Aldop      Cymax
 
@@ -363,7 +363,7 @@ Pylons =     {    },
 			-- Aldop - Alfadop Max AOA at current M - departure threshold
 			-- Cymax - Coefficient, lift, maximum possible (ignores other calculations if current Cy > Cymax)
 		}, -- end of aerodynamics
-		engine = 
+		engine =
 		{
             Nmg     =    11.83,    -- RPM at idle - Lowest throttle setting was only at 2000N
             MinRUD  =   .12,    -- Min state of the throttle
@@ -379,15 +379,15 @@ Pylons =     {    },
 				E_TURBOFAN	= 4
 				E_TURBOSHAFT = 5
 			--]]
-			
+
 			hMaxEng	=	15, -- Max altitude for safe engine operation in km
             dcx_eng    =    0.0,    -- Engine drag coeficient
             cemax    =    0.037,    -- not used for fuel calulation , only for AI routines to check flight time ( fuel calculation algorithm is built in )
             cefor    =    0.037,    -- not used for fuel calulation , only for AI routines to check flight time ( fuel calculation algorithm is built in )
             dpdh_m    =    2250,    --  altitude coefficient for max thrust
             dpdh_f    =    2250,    --  altitude coefficient for AB thrust
-			
-			table_data = 
+
+			table_data =
             {
             --   M            Pmax
                 {0.0,        16903.0}, -- 36,877 kN
@@ -402,15 +402,15 @@ Pylons =     {    },
                 {0.9,        16903.0},     --34800.0 23800.0 24800.0 24200.0 16000.0 14300.0 14500.0
                 {1.0,        16903.0},     --36000.0 24000.0 25000.0 22000.0 15000.0 14200.0 14500.0
             }, -- end of table_data
-			
-			
-			extended = -- added new abilities for engine performance setup. thrust data now can be specified as 2d table by Mach number and altitude. thrust specific fuel consumption tuning added as well 
+
+
+			extended = -- added new abilities for engine performance setup. thrust data now can be specified as 2d table by Mach number and altitude. thrust specific fuel consumption tuning added as well
 			{
 				thrust_max = -- thrust interpolation table by altitude and mach number, 2d table
 				 { -- Minimum thrust 2000 kN, maximum thrust 16700 kN
 					 M 		 = {0,.1,0.3,0.5,0.7,0.8,0.9,1.1},
 					 H		 = {0,250,4572,7620,10668,13716,16764,19812},
-					 thrust	 = {-- M   0         0.1       0.3       0.5       0.7      0.8     0.9       1.1 
+					 thrust	 = {-- M   0         0.1       0.3       0.5       0.7      0.8     0.9       1.1
 								{   16903,      16903,    16903,    16903,    16903,   16903,  16903,    16903 },--H = 0 (sea level)
 								{   16903,      16903,    16903,    16903,    16903,   16903,  16903,    16903 },--H = 250 (sea level)
 								{   16903,      16903,    16903,    16903,    16903,   16903,  16903,    16903 },--H = 4572 (15kft)
@@ -419,17 +419,17 @@ Pylons =     {    },
 								{   16903,      16903,    16903,    16903,    16903,   16903,  16903,    16903 },--H = 13716 (45kft)
 								{   16903,      16903,    16903,    16903,    16903,   16903,  16903,    16903 },--H = 16764 (55kft)
 								{   16903,      16903,    16903,    16903,    16903,   16903,  16903,    16903 },--H = 19812 (65kft)
-								 
-								 
+
+
 					 },
 				 },
-				 
-				 
+
+
 				 thrust_afterburner = -- afterburning thrust interpolation table by altitude and mach number, 2d table
-				 { -- 
+				 { --
 					 M 		 = {0,.1,0.3,0.5,0.7,0.8,0.9,1.1},
 					 H		 = {0,250,4572,7620,10668,13716,16764,19812},
-					 thrust	 = {-- M   0         0.1       0.3       0.5       0.7      0.8     0.9       1.1 
+					 thrust	 = {-- M   0         0.1       0.3       0.5       0.7      0.8     0.9       1.1
 								{   16903,      16903,    16903,    16903,    16903,   16903,  16903,    16903 },--H = 0 (sea level)
 								{   16903,      16903,    16903,    16903,    16903,   16903,  16903,    16903 },--H = 250 (sea level)
 								{   16903,      16903,    16903,    16903,    16903,   16903,  16903,    16903 },--H = 4572 (15kft)
@@ -438,20 +438,20 @@ Pylons =     {    },
 								{   16903,      16903,    16903,    16903,    16903,   16903,  16903,    16903 },--H = 13716 (45kft)
 								{   16903,      16903,    16903,    16903,    16903,   16903,  16903,    16903 },--H = 16764 (55kft)
 								{   16903,      16903,    16903,    16903,    16903,   16903,  16903,    16903 },--H = 19812 (65kft)
-								 
+
 					 },
 				 },
 				rpm_acceleration_time_factor = -- time factor for engine governor  ie RPM += (desired_RPM - RPM ) * t(RPM) * dt
 				{
 					RPM  = {0, 50, 100},
-					t    = {1,1,1} 
+					t    = {1,1,1}
 				},
-				rpm_deceleration_time_factor = -- time factor for engine governor 
+				rpm_deceleration_time_factor = -- time factor for engine governor
 				{
 					RPM  = {0, 50, 100},
-					t    = {1, 1, 1} 
+					t    = {1, 1, 1}
 				},
-				rpm_throttle_responce = -- required RPM according to throttle position 
+				rpm_throttle_responce = -- required RPM according to throttle position
 				{
 					throttle = {0  ,0.8 , 1.0},
 					RPM      = {50 ,80  ,100},
@@ -464,24 +464,24 @@ Pylons =     {    },
 			},
         }, -- end of engine
 	},
----------------------------------------------------------------------------------------------------------------------------------------------	        
+---------------------------------------------------------------------------------------------------------------------------------------------
     --damage , index meaning see in  Scripts\Aircrafts\_Common\Damage.lua
     Damage = {
                 [0] = {critical_damage = 5, args = {82}},  							-- 0 - nose center
                 [3] = {critical_damage = 10, args = {65}}, 							-- 3 - cockpit
                 [8] = {critical_damage = 10}, 			  							-- 8 - front gear
-                [11] = {critical_damage = 3}, 			  							-- 11 - engine in left 
-                [12] = {critical_damage = 3}, 			  							-- 12 - engine in right 
-                [15] = {critical_damage = 10},			   							-- 15 - gear left 
-                [16] = {critical_damage = 10}, 										-- 16 - gear right 
-                [17] = {critical_damage = 3}, 										-- 17 - motogondola left (left engine out, left ewu) 
-                [18] = {critical_damage = 3}, 										-- 18 - motogondola right (right engine out, right ewu) 
-                [25] = {critical_damage = 5, args = {53}}, 							-- 25 - eleron left 
-                [26] = {critical_damage = 5, args = {54}}, 							-- 26 - eleron right 
-                [35] = {critical_damage = 10, args = {67}, deps_cells = {25, 37}},  -- 35 - wing in left 
-                [36] = {critical_damage = 10, args = {68}, deps_cells = {26, 38}},  -- 36 - wing in right 
-                [37] = {critical_damage = 4, args = {55}}, 						    -- 37 - flap in left 
-                [38] = {critical_damage = 4, args = {56}}, 						    -- 38 - flap in right 
+                [11] = {critical_damage = 3}, 			  							-- 11 - engine in left
+                [12] = {critical_damage = 3}, 			  							-- 12 - engine in right
+                [15] = {critical_damage = 10},			   							-- 15 - gear left
+                [16] = {critical_damage = 10}, 										-- 16 - gear right
+                [17] = {critical_damage = 3}, 										-- 17 - motogondola left (left engine out, left ewu)
+                [18] = {critical_damage = 3}, 										-- 18 - motogondola right (right engine out, right ewu)
+                [25] = {critical_damage = 5, args = {53}}, 							-- 25 - eleron left
+                [26] = {critical_damage = 5, args = {54}}, 							-- 26 - eleron right
+                [35] = {critical_damage = 10, args = {67}, deps_cells = {25, 37}},  -- 35 - wing in left
+                [36] = {critical_damage = 10, args = {68}, deps_cells = {26, 38}},  -- 36 - wing in right
+                [37] = {critical_damage = 4, args = {55}}, 						    -- 37 - flap in left
+                [38] = {critical_damage = 4, args = {56}}, 						    -- 38 - flap in right
                 [43] = {critical_damage = 4, args = {61}, deps_cells = {53}}, 		-- 43 - fin bottom left
                 [44] = {critical_damage = 4, args = {62}, deps_cells = {54}}, 		-- 44 - fin bottom right
                 [47] = {critical_damage = 5, args = {63}, deps_cells = {51}}, 		-- 47 - stabilizer in left
@@ -491,19 +491,19 @@ Pylons =     {    },
                 [53] = {critical_damage = 2, args = {57}}, 							-- 53 - rudder left
                 [54] = {critical_damage = 2, args = {58}}, 							-- 54 - rudder right
                 [55] = {critical_damage = 5, args = {81}}, 							-- 55 - tail
-                [83]    = {critical_damage = 3, args = {134}}, 						-- nose wheel                                  
-                [84]    = {critical_damage = 3, args = {136}}, 						-- left wheel                                  
+                [83]    = {critical_damage = 3, args = {134}}, 						-- nose wheel
+                [84]    = {critical_damage = 3, args = {136}}, 						-- left wheel
                 [85]    = {critical_damage = 3, args = {135}}, 						-- right wheel
     },
-    
-	DamageParts = 
-	{  
+
+	DamageParts =
+	{
 --DAMAGEOFF		[1] = "ME-163B-1a-part-wing-R", -- wing R
 --DAMAGEOFF		[2] = "ME-163B-1a-part-wing-L", -- wing L
 --DAMAGEOFF		[3] = "ME-163B-1a-part-nose", -- nose
 --DAMAGEOFF		[4] = "ME-163B-1a-part-tail", -- tail
 	},
----------------------------------------------------------------------------------------------------------------------------------------------	    
+---------------------------------------------------------------------------------------------------------------------------------------------
     lights_data = {
     typename = "collection",
     lights = {
