@@ -5,7 +5,7 @@ ME_163B =  {
     DisplayName            = _('ME-163B'),
     ViewSettings        = ViewSettings,
 
-    -- enables ME-163 for countries that had them - Including researchd
+    -- enables ME-163 for countries that had them - Including countries that researched them.
 	Countries = {"Germany","UK","USAF Aggressors"},
 
     HumanCockpit         = false,
